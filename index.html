@@ -18,25 +18,13 @@
             background: linear-gradient(135deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff);
             border-radius: 50%;
         }
-        .card-shadow {
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-        .btn-gradient {
-            background: linear-gradient(135deg, #00b894, #00cec9);
-        }
-        .btn-gradient:hover {
-            background: linear-gradient(135deg, #00a884, #00beb9);
-            transform: translateY(-2px);
-        }
-        .btn-light {
-            background: linear-gradient(135deg, #dfe6e9, #b2bec3);
-        }
-        .btn-pink {
-            background: linear-gradient(135deg, #fd79a8, #e84393);
-        }
-        .btn-purple {
-            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
-        }
+        .card-shadow { box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .btn-gradient { background: linear-gradient(135deg, #00b894, #00cec9); }
+        .btn-gradient:hover { background: linear-gradient(135deg, #00a884, #00beb9); transform: translateY(-2px); }
+        .btn-light { background: linear-gradient(135deg, #dfe6e9, #b2bec3); }
+        .btn-pink { background: linear-gradient(135deg, #fd79a8, #e84393); }
+        .btn-purple { background: linear-gradient(135deg, #a29bfe, #6c5ce7); }
+        .btn-orange { background: linear-gradient(135deg, #ff6b6b, #ee5a24); }
         .service-card {
             background: white;
             border-radius: 16px;
@@ -48,122 +36,59 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.12);
         }
         .icon-box {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 60px; height: 60px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
         }
         .social-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f1f2f6;
-            transition: all 0.3s ease;
+            width: 44px; height: 44px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            background: #f1f2f6; transition: all 0.3s ease;
         }
-        .social-icon:hover {
-            background: #dfe4ea;
-            transform: scale(1.1);
-        }
+        .social-icon:hover { background: #dfe4ea; transform: scale(1.1); }
         .tiktok-icon:hover { background: #00f2ea; }
         .youtube-icon:hover { background: #ff0000; }
         .youtube-icon:hover svg { color: white; }
         .instagram-icon:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
         .instagram-icon:hover svg { color: white; }
         
-        /* Modal Styles */
         .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.6);
-            z-index: 100;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            backdrop-filter: blur(5px);
+            display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6); z-index: 100;
+            align-items: center; justify-content: center;
+            padding: 20px; backdrop-filter: blur(5px);
         }
-        .modal-overlay.active {
-            display: flex;
-        }
+        .modal-overlay.active { display: flex; }
         .modal-content {
-            background: white;
-            border-radius: 24px;
-            max-width: 400px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            animation: modalSlide 0.3s ease;
+            background: white; border-radius: 24px;
+            max-width: 400px; width: 100%; max-height: 90vh;
+            overflow-y: auto; animation: modalSlide 0.3s ease;
+            position: relative;
         }
         @keyframes modalSlide {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .modal-header {
-            padding: 24px 24px 0 24px;
-            text-align: center;
-        }
-        .modal-body {
-            padding: 20px 24px 24px 24px;
-        }
+        .modal-header { padding: 24px 24px 0 24px; text-align: center; }
+        .modal-body { padding: 20px 24px 24px 24px; }
         .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: #f1f2f6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            position: absolute; top: 15px; right: 15px;
+            width: 32px; height: 32px; border-radius: 50%;
+            background: #f1f2f6; display: flex;
+            align-items: center; justify-content: center;
+            cursor: pointer; transition: all 0.3s ease; z-index: 10;
         }
-        .close-btn:hover {
-            background: #dfe4ea;
-            transform: rotate(90deg);
-        }
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
+        .close-btn:hover { background: #dfe4ea; transform: rotate(90deg); }
+        .feature-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
         .feature-icon {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
+            width: 24px; height: 24px; border-radius: 50%;
             background: linear-gradient(135deg, #a29bfe, #6c5ce7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            margin-top: 2px;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; margin-top: 2px;
         }
-        .feature-icon svg {
-            width: 14px;
-            height: 14px;
-            color: white;
-        }
+        .feature-icon svg { width: 14px; height: 14px; color: white; }
         .bonus-box {
             background: linear-gradient(135deg, #fff9c4, #ffecb3);
-            border-radius: 12px;
-            padding: 16px;
-            margin-top: 16px;
+            border-radius: 12px; padding: 16px; margin-top: 16px;
             border: 2px dashed #ffc107;
         }
     </style>
@@ -176,9 +101,7 @@
             <div class="relative inline-block mb-4">
                 <div class="gradient-circle w-32 h-32 p-1">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white p-1">
-                        <div class="w-full h-full rounded-full bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center">
-                            <span class="text-4xl">👩‍💻</span>
-                        </div>
+                        <img src="chiara-profile.png" alt="Chiara Creative Studio" class="w-full h-full object-cover rounded-full">
                     </div>
                 </div>
             </div>
@@ -237,7 +160,7 @@
         <p class="text-center text-gray-500 font-medium text-sm mb-3 mt-6">I MIEI SERVIZI ⬇️</p>
         
         <!-- Siti Web -->
-        <div class="service-card card-shadow p-4 mb-4 flex items-center gap-4" onclick="openModal('websites')">
+        <div class="service-card card-shadow p-4 mb-4 flex items-center gap-4" data-modal="websites">
             <div class="icon-box bg-gradient-to-br from-purple-400 to-pink-500 flex-shrink-0">
                 <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -253,7 +176,7 @@
         </div>
 
         <!-- Gestione Social -->
-        <div class="service-card card-shadow p-4 mb-4 flex items-center gap-4" onclick="openModal('social')">
+        <div class="service-card card-shadow p-4 mb-4 flex items-center gap-4" data-modal="social">
             <div class="icon-box bg-gradient-to-br from-pink-400 to-rose-500 flex-shrink-0">
                 <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
@@ -269,7 +192,7 @@
         </div>
 
         <!-- Video & Reels -->
-        <div class="service-card card-shadow p-4 mb-4 flex items-center gap-4" onclick="openModal('video')">
+        <div class="service-card card-shadow p-4 mb-4 flex items-center gap-4" data-modal="video">
             <div class="icon-box bg-gradient-to-br from-red-400 to-orange-500 flex-shrink-0">
                 <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
@@ -337,9 +260,9 @@
     <!-- MODALS -->
     
     <!-- Modal Siti Web -->
-    <div class="modal-overlay" id="modal-websites" onclick="closeModal('websites')">
-        <div class="modal-content relative" onclick="event.stopPropagation()">
-            <div class="close-btn" onclick="closeModal('websites')">
+    <div class="modal-overlay" id="modal-websites">
+        <div class="modal-content">
+            <div class="close-btn" data-close="websites">
                 <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
@@ -393,18 +316,19 @@
                     </p>
                 </div>
 
-                <a href="/cdn-cgi/l/email-protection#ec8f84858d9e8d8d9b898e88899f858b82899eac8b818d8580c28f8381d39f998e86898f98d1ba839e9e8985c9dedc85828a83c9dedc9f99c9dedcbf859885c9dedcbb898eca8e838895d1af858d83c9dedcaf84858d9e8dcdc9dedcba839e9e8985c9dedc9f8d9c899e8289c9dedc8885c9dedc9c852f55c9dedc9f9985c9dedc98998385c9dedc9f899e9a859685c9dedc8885c9dedc8f9e898d9685838289c9dedc9f859885c9dedc9b898ec2" class="btn-gradient block w-full text-center text-white font-semibold py-4 rounded-xl mt-5 transition-all duration-300 shadow-lg">
+                <a href="mailto:chiaraawebdesigner@gmail.com?subject=Vorrei%20info%20su%20Siti%20Web&body=Ciao%20Chiara!%20Vorrei%20saperne%20di%20pi%C3%B9%20sui%20tuoi%20servizi%20di%20creazione%20siti%20web." 
+                   class="btn-gradient block w-full text-center text-white font-semibold py-4 rounded-xl mt-5 transition-all duration-300 shadow-lg">
                     📧 SCRIVIMI UN'EMAIL
                 </a>
-                <p class="text-center text-gray-400 text-xs mt-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e88b8081899a89899f8d8a8c8d9b818f868d9aa88f85898184c68b8785">[email&#160;protected]</a></p>
+                <p class="text-center text-gray-400 text-xs mt-2">chiaraawebdesigner@gmail.com</p>
             </div>
         </div>
     </div>
 
     <!-- Modal Social Media -->
-    <div class="modal-overlay" id="modal-social" onclick="closeModal('social')">
-        <div class="modal-content relative" onclick="event.stopPropagation()">
-            <div class="close-btn" onclick="closeModal('social')">
+    <div class="modal-overlay" id="modal-social">
+        <div class="modal-content">
+            <div class="close-btn" data-close="social">
                 <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
@@ -457,18 +381,19 @@
                     </p>
                 </div>
 
-                <a href="/cdn-cgi/l/email-protection#c4a7acada5b6a5a5b3a1a6a0a1b7ada3aaa1b684a3a9a5ada8eaa7aba9fbb7b1a6aea1a7b0f992abb6b6a1ade1f6f4adaaa2abe1f6f4b7b1e1f6f483a1b7b0adabaaa1e1f6f497aba7ada5a8e2a6aba0bdf987ada5abe1f6f487acada5b6a5e5e1f6f492abb6b6a1ade1f6f4b7a5b4a1b6aaa1e1f6f4a0ade1f6f4b4ad077de1f6f4b7b1a8a8a5e1f6f4a3a1b7b0adabaaa1e1f6f4b7aba7ada5a8e1f6f4a9a1a0ada5ea" class="btn-pink block w-full text-center text-white font-semibold py-4 rounded-xl mt-5 transition-all duration-300 shadow-lg">
+                <a href="mailto:chiaraawebdesigner@gmail.com?subject=Vorrei%20info%20su%20Gestione%20Social&body=Ciao%20Chiara!%20Vorrei%20saperne%20di%20pi%C3%B9%20sulla%20gestione%20social%20media." 
+                   class="btn-pink block w-full text-center text-white font-semibold py-4 rounded-xl mt-5 transition-all duration-300 shadow-lg">
                     📧 SCRIVIMI UN'EMAIL
                 </a>
-                <p class="text-center text-gray-400 text-xs mt-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="77141f1e160516160012151312041e1019120537101a161e1b5914181a">[email&#160;protected]</a></p>
+                <p class="text-center text-gray-400 text-xs mt-2">chiaraawebdesigner@gmail.com</p>
             </div>
         </div>
     </div>
 
     <!-- Modal Video & Reels -->
-    <div class="modal-overlay" id="modal-video" onclick="closeModal('video')">
-        <div class="modal-content relative" onclick="event.stopPropagation()">
-            <div class="close-btn" onclick="closeModal('video')">
+    <div class="modal-overlay" id="modal-video">
+        <div class="modal-content">
+            <div class="close-btn" data-close="video">
                 <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
@@ -521,7 +446,77 @@
                     </p>
                 </div>
 
-                <a href="/cdn-cgi/l/email-protection#37545f5e564556564052555352445e5059524577505a565e5b1954585a084442555d5254430a61584545525e1205075e5951581205074442120507615e535258120507521205076552525b44115558534e0a745e5658120507745f5e5645561612050761584545525e12050744564752455952120507535e120507475ef48e12050744425e1205074342585e120507445245415e4d5e120507415e535258120507521205074552525b4419" class="block w-full text-center text-white font-semibold py-4 rounded-xl mt-5 transition-all duration-300 shadow-lg" style="background: linear-gradient(135deg, #ff6b6b, #ee5a24);">
+                <a href="mailto:chiaraawebdesigner@gmail.com?subject=Vorrei%20info%20su%20Video%20e%20Reels&body=Ciao%20Chiara!%20Vorrei%20saperne%20di%20pi%C3%B9%20sui%20tuoi%20servizi%20video%20e%20reels." 
+                   class="btn-orange block w-full text-center text-white font-semibold py-4 rounded-xl mt-5 transition-all duration-300 shadow-lg">
                     📧 SCRIVIMI UN'EMAIL
                 </a>
-                <p class="text-center text-gray-400 text-xs mt-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ae9e2e3ebf8ebebfdef
+                <p class="text-center text-gray-400 text-xs mt-2">chiaraawebdesigner@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all service cards with data-modal attribute
+            var serviceCards = document.querySelectorAll('[data-modal]');
+            
+            // Add click listener to each service card
+            serviceCards.forEach(function(card) {
+                card.addEventListener('click', function() {
+                    var modalId = this.getAttribute('data-modal');
+                    var modal = document.getElementById('modal-' + modalId);
+                    if (modal) {
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            // Get all close buttons
+            var closeButtons = document.querySelectorAll('[data-close]');
+            
+            // Add click listener to each close button
+            closeButtons.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    var modalId = this.getAttribute('data-close');
+                    var modal = document.getElementById('modal-' + modalId);
+                    if (modal) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+
+            // Close on overlay click
+            var overlays = document.querySelectorAll('.modal-overlay');
+            overlays.forEach(function(overlay) {
+                overlay.addEventListener('click', function(e) {
+                    if (e.target === overlay) {
+                        overlay.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+
+            // Prevent modal content click from closing
+            var modalContents = document.querySelectorAll('.modal-content');
+            modalContents.forEach(function(content) {
+                content.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('.modal-overlay.active').forEach(function(modal) {
+                        modal.classList.remove('active');
+                    });
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
