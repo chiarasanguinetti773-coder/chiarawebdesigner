@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chiara Creative Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+```
+body {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #fce4ec 0%, #fdf0f4 60%, #fff0f5 100%);
+  font-family: 'DM Sans', sans-serif;
+  padding-bottom: 60px;
+}
+
+/* ---- TABS ---- */
+.tab-btn {
+  padding: 10px 22px;
+  border-radius: 50px;
+  border: none;
+  background: white;
+  color: #7b1c35;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: all 0.2s ease;
+}
+.tab-btn.active {
+  background: #7b1c35;
+  color: white;
+  box-shadow: 0 6px 20px rgba(123,28,53,0.3);
+}
+
+/* ---- CATEGORY PILLS ---- */
+.cat-btn {
+  flex-shrink: 0;
+  padding: 7px 18px;
+  border-radius: 50px;
+  border: 1.5px solid #f5d0dc;
+  background: white;
+  color: #9e6070;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.cat-btn.active {
+  background: #f8bbd0;
+  color: #7b1c35;
+  border-color: #f48fb1;
+  font-weight: 500;
+}
+
+/* ---- CARDS ---- */
+.service-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(123,28,53,0.08);
+  border: 1px solid rgba(248,187,208,0.4);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(123,28,53,0.15);
+}
+
+/* ---- LINK ROWS ---- */
+.link-row {
+  border-radius: 18px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.link-row:hover {
+  transform: translateX(4px);
+}
+.link-row.normal {
+  background: white;
+  box-shadow: 0 4px 16px rgba(123,28,53,0.08);
+  border: 1px solid rgba(248,187,208,0.4);
+}
+.link-row.highlight {
+  background: linear-gradient(135deg, #7b1c35, #a0263e);
+  box-shadow: 0 6px 24px rgba(123,28,53,0.3);
+}
+
+/* ---- BUTTONS ---- */
+.btn-primary {
+  background: linear-gradient(135deg, #7b1c35, #a0263e);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 9px 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(123,28,53,0.3);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn-primary:hover { opacity: 0.9; transform: scale(0.98); }
+
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #7b1c35, #a0263e);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  padding: 12px 26px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 6px 20px rgba(123,28,53,0.35);
+  transition: opacity 0.2s;
+}
+.btn-pill:hover { opacity: 0.9; }
+
+/* ---- MODAL ---- */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(42,10,20,0.55);
+  backdrop-filter: blur(6px);
+  align-items: flex-end;
+  justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal-box {
+  background: white;
+  border-radius: 28px 28px 0 0;
+  padding: 28px 24px 48px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 -8px 40px rgba(123,28,53,0.2);
+  animation: slideUp 0.3s ease;
+}
+@keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+.modal-handle {
+  width: 40px; height: 4px;
+  background: #f8bbd0;
+  border-radius: 4px;
+  margin: 0 auto 20px;
+}
+
+/* ---- SECTIONS ---- */
+.section { display: none; }
+.section.active { display: block; }
+
+/* ---- ANIMATIONS ---- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeInUp 0.4s ease forwards; }
+
+/* ---- NEWSLETTER ---- */
+.newsletter-box {
+  background: linear-gradient(135deg, #7b1c35, #a0263e);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 8px 32px rgba(123,28,53,0.25);
+}
+.nl-input {
+  border-radius: 14px;
+  border: none;
+  padding: 14px 18px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  background: rgba(255,255,255,0.18);
+  color: white;
+  outline: none;
+  width: 100%;
+}
+.nl-input::placeholder { color: rgba(255,255,255,0.55); }
+.nl-btn {
+  background: white;
+  color: #7b1c35;
+  border: none;
+  border-radius: 14px;
+  padding: 14px;
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 4px;
+}
+.nl-btn:hover { opacity: 0.92; }
+
+/* scrollbar hidden */
+.cats-scroll { scrollbar-width: none; }
+.cats-scroll::-webkit-scrollbar { display: none; }
+
+/* privacy link */
+.privacy-link {
+  color: #9e4a65;
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+}
+```
+
+  </style>
+</head>
+<body>
+
+<!-- ========== HERO ========== -->
+
+<div style="text-align:center; padding: 48px 24px 20px;">
+  <div style="width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,#7b1c35,#c0395a);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:36px;box-shadow:0 8px 32px rgba(123,28,53,0.3);border:4px solid white;">
+    ✨
+  </div>
+  <h1 style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:#2a0a14;letter-spacing:0.02em;margin-bottom:6px;">
+    Chiara Creative Studio
+  </h1>
+  <p style="font-size:13px;color:#9e4a65;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;">
+    @chiaracreative.studio
+  </p>
+  <p style="font-size:14px;color:#7b3a50;max-width:280px;margin:0 auto 4px;line-height:1.6;">
+    Strategia digitale · Branding · Web · AI
+  </p>
+  <p style="font-size:11px;color:#c09aaa;margin-bottom:20px;">P.IVA 18147451001</p>
+  <a href="INSERISCI_LINK_CALENDLY" target="_blank" class="btn-pill">
+    📞 Prenota una call gratuita
+  </a>
+</div>
+
+<!-- ========== TABS ========== -->
+
+<div style="display:flex;justify-content:center;gap:8px;padding:16px 24px 24px;flex-wrap:wrap;">
+  <button class="tab-btn active" onclick="switchTab('servizi')">🛍 Servizi</button>
+  <button class="tab-btn" onclick="switchTab('newsletter')">💌 Newsletter</button>
+  <button class="tab-btn" onclick="switchTab('link')">🔗 Link</button>
+</div>
+
+<!-- ========== SERVIZI ========== -->
+
+<div id="tab-servizi" class="section active">
+
+  <!-- Category filter -->
+
+  <div class="cats-scroll" style="display:flex;gap:8px;overflow-x:auto;padding:0 24px 20px;">
+    <button class="cat-btn active" onclick="filterCat(this,'Tutti')">Tutti</button>
+    <button class="cat-btn" onclick="filterCat(this,'Social Media')">Social Media</button>
+    <button class="cat-btn" onclick="filterCat(this,'Strategia')">Strategia</button>
+    <button class="cat-btn" onclick="filterCat(this,'Branding')">Branding</button>
+    <button class="cat-btn" onclick="filterCat(this,'Web')">Web</button>
+    <button class="cat-btn" onclick="filterCat(this,'Tech')">Tech</button>
+  </div>
+
+  <!-- Cards -->
+
+  <div id="cards-container" style="padding:0 18px;display:flex;flex-direction:column;gap:16px;"></div>
+</div>
+
+<!-- ========== NEWSLETTER ========== -->
+
+<div id="tab-newsletter" class="section">
+  <div style="padding:0 18px 16px;">
+    <div class="newsletter-box">
+      <div style="text-align:center;margin-bottom:24px;">
+        <div style="font-size:36px;margin-bottom:10px;">💌</div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:white;margin-bottom:10px;">
+          Iscriviti alla Newsletter
+        </h2>
+        <p style="font-size:14px;color:rgba(255,255,255,0.8);line-height:1.65;">
+          Ogni settimana consigli pratici su Instagram, AI, branding e vita da freelance. Niente spam, promesso. 🌸
+        </p>
+      </div>
+
+```
+  <div id="nl-form" style="display:flex;flex-direction:column;gap:12px;">
+    <input class="nl-input" type="text" id="nl-nome" placeholder="Il tuo nome 🌸" />
+    <input class="nl-input" type="email" id="nl-email" placeholder="La tua email ✉️" />
+    <button class="nl-btn" onclick="subscribeNewsletter()">Iscriviti gratis ✨</button>
+    <p style="font-size:11px;color:rgba(255,255,255,0.5);text-align:center;">Puoi disiscriverti in qualsiasi momento.</p>
+  </div>
+
+  <div id="nl-success" style="display:none;background:rgba(255,255,255,0.15);border-radius:18px;padding:24px;text-align:center;">
+    <div style="font-size:36px;margin-bottom:10px;">🎉</div>
+    <p style="color:white;font-size:16px;font-weight:500;">Benvenuta! Controlla la tua email 💌</p>
+    <p style="color:rgba(255,255,255,0.7);font-size:13px;margin-top:6px;">A presto nella tua inbox!</p>
+  </div>
+</div>
+
+<div style="background:white;border-radius:20px;padding:20px;margin-top:14px;border:1px solid rgba(248,187,208,0.4);box-shadow:0 4px 16px rgba(123,28,53,0.07);">
+  <p style="font-family:'Cormorant Garamond',serif;font-size:17px;color:#2a0a14;font-weight:600;margin-bottom:12px;">Cosa troverai nella newsletter 📬</p>
+  <p style="font-size:13px;color:#9e6070;margin-bottom:8px;line-height:1.5;">📱 Tips pratici su Instagram e i social</p>
+  <p style="font-size:13px;color:#9e6070;margin-bottom:8px;line-height:1.5;">🤖 Come usare l'AI per creare contenuti</p>
+  <p style="font-size:13px;color:#9e6070;margin-bottom:8px;line-height:1.5;">✨ Branding e identità visiva per creator</p>
+  <p style="font-size:13px;color:#9e6070;margin-bottom:8px;line-height:1.5;">💻 Tool e risorse che uso ogni giorno</p>
+  <p style="font-size:13px;color:#9e6070;line-height:1.5;">🌸 Vita da freelance: dietro le quinte</p>
+</div>
+```
+
+  </div>
+</div>
+
+<!-- ========== LINK ========== -->
+
+<div id="tab-link" class="section">
+  <div style="padding:0 18px;display:flex;flex-direction:column;gap:12px;">
+
+```
+<a href="INSERISCI_LINK_CALENDLY" target="_blank" class="link-row highlight">
+  <div>
+    <p style="font-size:15px;font-weight:500;color:white;margin-bottom:2px;">📞 Call conoscitiva gratuita</p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.75);">Prenota 20 minuti insieme — gratis</p>
+  </div>
+  <span style="color:white;font-size:18px;">→</span>
+</a>
+
+<a href="INSERISCI_LINK_GOOGLE_FORMS" target="_blank" class="link-row normal">
+  <div>
+    <p style="font-size:15px;font-weight:500;color:#2a0a14;margin-bottom:2px;">📋 Lavora con me</p>
+    <p style="font-size:12px;color:#9e6070;">Compila il form di contatto</p>
+  </div>
+  <span style="color:#7b1c35;font-size:18px;">→</span>
+</a>
+
+<a href="mailto:INSERISCI_TUA_EMAIL" class="link-row normal">
+  <div>
+    <p style="font-size:15px;font-weight:500;color:#2a0a14;margin-bottom:2px;">📧 Scrivimi un'email</p>
+    <p style="font-size:12px;color:#9e6070;">Rispondo entro 24h</p>
+  </div>
+  <span style="color:#7b1c35;font-size:18px;">→</span>
+</a>
+
+<a href="https://instagram.com/chiaracreative.studio" target="_blank" class="link-row normal">
+  <div>
+    <p style="font-size:15px;font-weight:500;color:#2a0a14;margin-bottom:2px;">📸 Instagram</p>
+    <p style="font-size:12px;color:#9e6070;">@chiaracreative.studio</p>
+  </div>
+  <span style="color:#7b1c35;font-size:18px;">→</span>
+</a>
+
+<a href="https://tiktok.com/@lasmmsenzafiltri" target="_blank" class="link-row normal">
+  <div>
+    <p style="font-size:15px;font-weight:500;color:#2a0a14;margin-bottom:2px;">🎵 TikTok</p>
+    <p style="font-size:12px;color:#9e6070;">@lasmmsenzafiltri</p>
+  </div>
+  <span style="color:#7b1c35;font-size:18px;">→</span>
+</a>
+
+<a href="INSERISCI_LINK_YOUTUBE" target="_blank" class="link-row normal">
+  <div>
+    <p style="font-size:15px;font-weight:500;color:#2a0a14;margin-bottom:2px;">▶️ YouTube</p>
+    <p style="font-size:12px;color:#9e6070;">Il mio canale</p>
+  </div>
+  <span style="color:#7b1c35;font-size:18px;">→</span>
+</a>
+
+<div style="text-align:center;margin-top:8px;">
+  <p style="font-size:12px;color:#c09aaa;">© 2025 Chiara Creative Studio — P.IVA 18147451001</p>
+  <button class="privacy-link" onclick="openPrivacy()" style="margin-top:4px;">Privacy Policy</button>
+</div>
+```
+
+  </div>
+</div>
+
+<!-- ========== MODAL SERVIZIO ========== -->
+
+<div id="modal-service" class="modal-overlay" onclick="closeServiceModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-handle"></div>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <div id="modal-emoji" style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#7b1c35,#c0395a);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;"></div>
+      <div>
+        <h2 id="modal-title" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#2a0a14;"></h2>
+        <span id="modal-price" style="font-family:'Cormorant Garamond',serif;font-size:18px;color:#7b1c35;font-weight:600;"></span>
+      </div>
+    </div>
+    <p id="modal-desc" style="font-size:14px;color:#7b3a50;line-height:1.75;margin-bottom:24px;"></p>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <a id="modal-email-btn" href="#" style="display:block;text-align:center;background:linear-gradient(135deg,#7b1c35,#a0263e);color:white;text-decoration:none;border-radius:14px;padding:13px 24px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;box-shadow:0 4px 16px rgba(123,28,53,0.3);">
+        📧 Scrivimi un'email
+      </a>
+      <a href="https://instagram.com/chiaracreative.studio" target="_blank" style="display:block;text-align:center;background:#fce4ec;color:#7b1c35;text-decoration:none;border-radius:14px;padding:13px 24px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;border:1.5px solid #f8bbd0;">
+        📸 Mandami un DM su Instagram
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MODAL PRIVACY ========== -->
+
+<div id="modal-privacy" class="modal-overlay" onclick="closePrivacy()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-handle"></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:#2a0a14;margin-bottom:16px;">Privacy Policy</h2>
+
+```
+<div style="margin-bottom:16px;">
+  <p style="font-size:13px;font-weight:600;color:#7b1c35;margin-bottom:4px;">Titolare del Trattamento</p>
+  <p style="font-size:13px;color:#7b3a50;line-height:1.65;">Chiara Creative Studio — P.IVA 18147451001. Per qualsiasi richiesta: INSERISCI_TUA_EMAIL</p>
+</div>
+<div style="margin-bottom:16px;">
+  <p style="font-size:13px;font-weight:600;color:#7b1c35;margin-bottom:4px;">Dati raccolti</p>
+  <p style="font-size:13px;color:#7b3a50;line-height:1.65;">Raccogliamo esclusivamente i dati che fornisci volontariamente tramite i nostri form (nome e indirizzo email) per l'invio della newsletter e per rispondere alle tue richieste di contatto.</p>
+</div>
+<div style="margin-bottom:16px;">
+  <p style="font-size:13px;font-weight:600;color:#7b1c35;margin-bottom:4px;">Finalità del trattamento</p>
+  <p style="font-size:13px;color:#7b3a50;line-height:1.65;">I tuoi dati vengono utilizzati per: invio della newsletter (solo se ti iscrivi volontariamente), risposta a richieste di contatto o preventivi, gestione del rapporto di collaborazione.</p>
+</div>
+<div style="margin-bottom:16px;">
+  <p style="font-size:13px;font-weight:600;color:#7b1c35;margin-bottom:4px;">Base giuridica</p>
+  <p style="font-size:13px;color:#7b3a50;line-height:1.65;">Il trattamento si basa sul tuo consenso esplicito (art. 6, par. 1, lett. a GDPR), che puoi revocare in qualsiasi momento.</p>
+</div>
+<div style="margin-bottom:16px;">
+  <p style="font-size:13px;font-weight:600;color:#7b1c35;margin-bottom:4px;">Conservazione dei dati</p>
+  <p style="font-size:13px;color:#7b3a50;line-height:1.65;">I dati vengono conservati per il tempo strettamente necessario alle finalità per cui sono stati raccolti, e comunque non oltre 2 anni dall'ultimo contatto.</p>
+</div>
+<div style="margin-bottom:16px;">
+  <p style="font-size:13px;font-weight:600;color:#7b1c35;margin-bottom:4px;">I tuoi diritti</p>
+  <p style="font-size:13px;color:#7b3a50;line-height:1.65;">Hai diritto di accedere, rettificare, cancellare i tuoi dati, opporti al trattamento e richiedere la portabilità. Scrivici a INSERISCI_TUA_EMAIL per esercitare i tuoi diritti.</p>
+</div>
+<div style="margin-bottom:16px;">
+  <p style="font-size:13px;font-weight:600;color:#7b1c35;margin-bottom:4px;">Newsletter</p>
+  <p style="font-size:13px;color:#7b3a50;line-height:1.65;">Puoi disiscriverti dalla newsletter in qualsiasi momento cliccando il link "Cancella iscrizione" presente in ogni email, senza alcuna conseguenza.</p>
+</div>
+<div style="margin-bottom:24px;">
+  <p style="font-size:13px;font-weight:600;color:#7b1c35;margin-bottom:4px;">Cookie</p>
+  <p style="font-size:13px;color:#7b3a50;line-height:1.65;">Questo sito non utilizza cookie di profilazione o di terze parti a fini pubblicitari.</p>
+</div>
+
+<button onclick="closePrivacy()" style="width:100%;background:linear-gradient(135deg,#7b1c35,#a0263e);color:white;border:none;border-radius:14px;padding:13px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;">
+  Chiudi
+</button>
+```
+
+  </div>
+</div>
+
+<script>
+  // ---- DATA ----
+  const services = [
+    {
+      id: 1, category: "Social Media", emoji: "📱",
+      title: "Gestione Social Media",
+      description: "Mi occupo di tutto: strategia, contenuti, pubblicazione e analytics per far crescere il tuo profilo in modo organico.",
+      longDescription: "Un servizio completo pensato per chi vuole smettere di preoccuparsi dei social e concentrarsi sul proprio business. Creo il tuo piano editoriale mensile, produco i contenuti (grafiche, caption, hashtag), mi occupo della pubblicazione e monitoro le performance. Lavoriamo insieme per costruire una community reale, senza trucchi e senza ads.",
+      price: "Su preventivo", cta: "Scopri di più", tag: "⭐ Più richiesto"
+    },
+    {
+      id: 2, category: "Strategia", emoji: "🎯",
+      title: "Strategia Instagram",
+      description: "Sessione 1:1 per definire la tua strategia di crescita organica, content plan e posizionamento sul mercato.",
+      longDescription: "Una sessione intensiva di 60 minuti in cui analizziamo il tuo profilo attuale, definiamo il tuo target ideale, costruiamo una strategia di contenuti su misura e ti do un piano d'azione chiaro e replicabile. Ideale per chi vuole risultati concreti e un metodo da seguire ogni mese.",
+      price: "€150", cta: "Prenota ora", tag: null
+    },
+    {
+      id: 3, category: "Branding", emoji: "✨",
+      title: "Logo & Brand Identity",
+      description: "Creo la tua identità visiva completa: logo, palette colori, font, mockup e brand guidelines pronte all'uso.",
+      longDescription: "Il tuo brand è la prima impressione che dai. Ti consegno un'identità visiva completa e professionale: logo in tutte le varianti, palette colori con codici HEX, selezione font, brand pattern, mockup applicati e un documento di brand guidelines. Tutto in formato editabile.",
+      price: "Da €300", cta: "Richiedi info", tag: "🔥 Nuovo"
+    },
+    {
+      id: 4, category: "Web", emoji: "💻",
+      title: "Siti Web",
+      description: "Siti web professionali, veloci e mobile-first per creator, coach e piccole imprese. Design curato e su misura.",
+      longDescription: "Creo siti web che non sono solo belli, ma che convertono. Design personalizzato, ottimizzazione mobile, velocità di caricamento, SEO base e integrazione con i tuoi strumenti preferiti (Calendly, Stripe, ecc.). Consegna in 2–3 settimane. Hai già un sito? Posso rinnovarlo.",
+      price: "Da €500", cta: "Vedi portfolio", tag: null
+    },
+    {
+      id: 5, category: "Tech", emoji: "🚀",
+      title: "Web App & Tool AI",
+      description: "Sviluppo webapp personalizzate, strumenti AI e automazioni per ottimizzare il tuo business digitale.",
+      longDescription: "Hai un'idea o un processo ripetitivo che vorresti automatizzare? Creo webapp su misura, tool con intelligenza artificiale integrata, dashboard personalizzate e automazioni con Zapier / Make. Perfetto per coach, agenzie e piccoli business che vogliono lavorare in modo più smart.",
+      price: "Su preventivo", cta: "Parliamone", tag: "💡 AI Powered"
+    },
+  ];
+
+  let currentCategory = "Tutti";
+
+  function renderCards() {
+    const container = document.getElementById("cards-container");
+    const filtered = currentCategory === "Tutti"
+      ? services
+      : services.filter(s => s.category === currentCategory);
+
+    container.innerHTML = filtered.map((s, i) => `
+      <div class="service-card fade-in" style="animation-delay:${i * 0.07}s" onclick="openServiceModal(${s.id})">
+        <div style="display:flex;align-items:flex-start;gap:14px;">
+          <div style="width:52px;height:52px;flex-shrink:0;border-radius:14px;background:linear-gradient(135deg,#7b1c35,#c0395a);display:flex;align-items:center;justify-content:center;font-size:22px;">
+            ${s.emoji}
+          </div>
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap;">
+              <h2 style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#2a0a14;">${s.title}</h2>
+              ${s.tag ? `<span style="font-size:10px;background:#fce4ec;color:#7b1c35;padding:2px 8px;border-radius:20px;font-weight:500;white-space:nowrap;">${s.tag}</span>` : ""}
+            </div>
+            <p style="font-size:13px;color:#9e6070;line-height:1.6;margin-bottom:12px;">${s.description}</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#7b1c35;">${s.price}</span>
+              <button class="btn-primary" onclick="event.stopPropagation();openServiceModal(${s.id})">${s.cta} →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  function filterCat(btn, cat) {
+    document.querySelectorAll(".cat-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    currentCategory = cat;
+    renderCards();
+  }
+
+  function switchTab(tab) {
+    document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    document.getElementById("tab-" + tab).classList.add("active");
+    event.target.classList.add("active");
+  }
+
+  // ---- SERVICE MODAL ----
+  function openServiceModal(id) {
+    const s = services.find(x => x.id === id);
+    document.getElementById("modal-emoji").textContent = s.emoji;
+    document.getElementById("modal-title").textContent = s.title;
+    document.getElementById("modal-price").textContent = s.price;
+    document.getElementById("modal-desc").textContent = s.longDescription;
+    document.getElementById("modal-email-btn").href =
+      `mailto:INSERISCI_TUA_EMAIL?subject=Richiesta info: ${encodeURIComponent(s.title)}`;
+    document.getElementById("modal-service").classList.add("open");
+  }
+  function closeServiceModal() {
+    document.getElementById("modal-service").classList.remove("open");
+  }
+
+  // ---- PRIVACY MODAL ----
+  function openPrivacy() {
+    document.getElementById("modal-privacy").classList.add("open");
+  }
+  function closePrivacy() {
+    document.getElementById("modal-privacy").classList.remove("open");
+  }
+
+  // ---- NEWSLETTER ----
+  function subscribeNewsletter() {
+    const email = document.getElementById("nl-email").value;
+    if (!email || !email.includes("@")) return;
+    document.getElementById("nl-form").style.display = "none";
+    document.getElementById("nl-success").style.display = "block";
+  }
+
+  // ---- INIT ----
+  renderCards();
+</script>
+
+</body>
+</html>
