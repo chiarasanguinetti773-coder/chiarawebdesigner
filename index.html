@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chiara Creative Studio</title>
-  <link href="98A6C280-F108-40F2-8DCD-5EF8CB51A2E2.PNG" rel="stylesheet" />
-  <link rel="stylesheet" href="98A6C280-F108-40F2-8DCD-5EF8CB51A2E2.PNG" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { min-height:100vh; background:linear-gradient(160deg,#fce4ec 0%,#fdf0f4 60%,#fff0f5 100%); font-family:'DM Sans',sans-serif; padding-bottom:60px; }
@@ -101,11 +101,13 @@
 <body>
 
 <div class="hero">
-  <div class="avatar">✨</div>
+  <!-- FOTO PROFILO: sostituisci "foto-profilo.jpg" con il nome del tuo file immagine caricato su GitHub -->
+  <img src="foto-profilo.jpg" alt="Chiara Creative Studio"
+    style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin:0 auto 16px;display:block;box-shadow:0 8px 32px rgba(123,28,53,0.3);border:4px solid white;" />
   <h1>Chiara Creative Studio</h1>
   <p class="handle">@chiaracreative.studio</p>
   <p class="tagline">Strategia digitale · Branding · Web · AI</p>
-  <a href="https://calendly.com/chiaraawebdesigner/call-conoscitiva-gratuita" target="_blank" class="btn-call">📞 Prenota una call gratuita</a>
+  <a href="#" onclick="document.getElementById('modal-call').classList.add('open');return false;" class="btn-call">📞 Prenota una call gratuita</a>
 </div>
 
 <div class="tabs">
@@ -124,6 +126,7 @@
     <button class="cat-btn" onclick="filterCat(this,'Branding')">Branding</button>
     <button class="cat-btn" onclick="filterCat(this,'Web')">Web</button>
     <button class="cat-btn" onclick="filterCat(this,'Tech')">Tech</button>
+    <button class="cat-btn" onclick="filterCat(this,'Digitale')">🛍 Digitale</button>
   </div>
   <div id="cards-container"></div>
 </div>
@@ -133,6 +136,7 @@
 <div id="tab-newsletter" class="section">
   <div class="nl-wrap">
 
+```
 <div class="nl-box">
   <div style="text-align:center;">
     <div style="font-size:36px;margin-bottom:10px;">💌</div>
@@ -196,6 +200,7 @@
   <p>💻 Tool e risorse che uso ogni giorno</p>
   <p>🌸 Vita da freelance: dietro le quinte</p>
 </div>
+```
 
   </div>
 </div>
@@ -204,7 +209,7 @@
 
 <div id="tab-link" class="section">
   <div class="links-list">
-    <a href="https://calendly.com/chiaraawebdesigner/call-conoscitiva-gratuita" target="_blank" class="link-row highlight">
+    <a href="#" onclick="document.getElementById('modal-call').classList.add('open');return false;" class="link-row highlight">
       <div><p class="link-label">📞 Call conoscitiva gratuita</p><p class="link-sub">Prenota 20 minuti insieme — gratis</p></div>
       <span class="link-arrow">→</span>
     </a>
@@ -216,7 +221,7 @@
       <div><p class="link-label">📋 Lavora con me</p><p class="link-sub">Compila il form di contatto</p></div>
       <span class="link-arrow">→</span>
     </a>
-    <a href="mailto:chiaraawebdesigner@gmail.com" class="link-row normal">
+    <a href="/cdn-cgi/l/email-protection#1b5255485e4952485852444f4e5a445e565a5257" class="link-row normal">
       <div><p class="link-label">📧 Scrivimi un'email</p><p class="link-sub">Rispondo entro 24h</p></div>
       <span class="link-arrow">→</span>
     </a>
@@ -243,6 +248,60 @@
   <button onclick="document.getElementById('modal-privacy').classList.add('open')">Privacy Policy</button>
 </div>
 
+<!-- MODAL CALL CONOSCITIVA -->
+
+<div id="modal-call" class="overlay" onclick="this.classList.remove('open')">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-handle"></div>
+
+```
+<div style="text-align:center; margin-bottom:20px;">
+  <div style="font-size:40px; margin-bottom:10px;">📞</div>
+  <h2 style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#2a0a14;margin-bottom:8px;">Call Conoscitiva Gratuita</h2>
+  <span style="display:inline-block;background:#fce4ec;color:#7b1c35;font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;letter-spacing:0.05em;">⏱ 30 minuti · Gratis</span>
+</div>
+
+<p style="font-size:14px;color:#7b3a50;line-height:1.75;margin-bottom:20px;">
+  Non inizierò a parlarti di servizi o prezzi — voglio prima <strong>ascoltarti</strong>. Mi racconti del tuo business, di dove sei adesso e dove vuoi arrivare.
+</p>
+
+<div style="display:flex;flex-direction:column;gap:12px;margin-bottom:24px;">
+  <div style="display:flex;align-items:flex-start;gap:12px;">
+    <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#7b1c35,#c0395a);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">🎤</div>
+    <div>
+      <p style="font-size:14px;font-weight:600;color:#2a0a14;margin-bottom:2px;">Ti do la parola</p>
+      <p style="font-size:13px;color:#9e6070;line-height:1.5;">Mi parli del tuo profilo, dei tuoi obiettivi e delle difficoltà che stai incontrando.</p>
+    </div>
+  </div>
+  <div style="display:flex;align-items:flex-start;gap:12px;">
+    <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#7b1c35,#c0395a);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">🔍</div>
+    <div>
+      <p style="font-size:14px;font-weight:600;color:#2a0a14;margin-bottom:2px;">Analizziamo insieme</p>
+      <p style="font-size:13px;color:#9e6070;line-height:1.5;">Guardiamo il tuo profilo e capisco subito cosa funziona e cosa si può migliorare.</p>
+    </div>
+  </div>
+  <div style="display:flex;align-items:flex-start;gap:12px;">
+    <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#7b1c35,#c0395a);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">🧭</div>
+    <div>
+      <p style="font-size:14px;font-weight:600;color:#2a0a14;margin-bottom:2px;">Ti indico la direzione</p>
+      <p style="font-size:13px;color:#9e6070;line-height:1.5;">Uscirai dalla call con le idee chiare su cosa fare per far crescere il tuo profilo.</p>
+    </div>
+  </div>
+</div>
+
+<a href="https://calendly.com/chiaraawebdesigner/call-conoscitiva-gratuita" target="_blank"
+  style="display:block;text-align:center;background:linear-gradient(135deg,#7b1c35,#a0263e);color:white;text-decoration:none;border-radius:14px;padding:14px 24px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;box-shadow:0 4px 16px rgba(123,28,53,0.3);margin-bottom:10px;">
+  📅 Prenota la tua call gratuita
+</a>
+<button onclick="document.getElementById('modal-call').classList.remove('open')"
+  style="width:100%;background:none;border:none;color:#9e6070;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;padding:8px;">
+  Non ora, grazie
+</button>
+```
+
+  </div>
+</div>
+
 <!-- MODAL SERVIZIO -->
 
 <div id="modal-service" class="overlay" onclick="this.classList.remove('open')">
@@ -257,6 +316,7 @@
     </div>
     <p class="modal-desc" id="m-desc"></p>
     <div class="modal-actions">
+      <a id="m-stripe" href="#" target="_blank" style="display:none;text-align:center;background:linear-gradient(135deg,#1a1a2e,#16213e);color:white;text-decoration:none;border-radius:14px;padding:13px 24px;font-size:14px;font-weight:600;box-shadow:0 4px 16px rgba(0,0,0,0.2);">🛒 Acquista ora — Pagamento sicuro</a>
       <a id="m-email" href="#" class="btn-email">📧 Scrivimi un'email</a>
       <a href="https://instagram.com/chiaracreative.studio" target="_blank" class="btn-ig">📸 Mandami un DM su Instagram</a>
     </div>
@@ -305,67 +365,81 @@
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
 var services = [
-  { id:1, category:"Social Media", emoji:"📱", title:"Gestione Social Media", description:"Mi occupo di tutto: strategia, contenuti, pubblicazione e analytics per far crescere il tuo profilo in modo organico.", longDescription:"Un servizio completo pensato per chi vuole smettere di preoccuparsi dei social e concentrarsi sul proprio business. Creo il tuo piano editoriale mensile, produco i contenuti (grafiche, caption, hashtag), mi occupo della pubblicazione e monitoro le performance. Lavoriamo insieme per costruire una community reale, senza trucchi e senza ads.", price:"Su preventivo", cta:"Scopri di più", tag:"⭐ Più richiesto" },
-  { id:2, category:"Strategia", emoji:"🎯", title:"Strategia Instagram", description:"Sessione 1:1 per definire la tua strategia di crescita organica, content plan e posizionamento sul mercato.", longDescription:"Una sessione intensiva di 60 minuti in cui analizziamo il tuo profilo attuale, definiamo il tuo target ideale, costruiamo una strategia di contenuti su misura e ti do un piano d'azione chiaro e replicabile. Ideale per chi vuole risultati concreti e un metodo da seguire ogni mese.", price:"€150", cta:"Prenota ora", tag:null },
-  { id:3, category:"Branding", emoji:"✨", title:"Logo & Brand Identity", description:"Creo la tua identità visiva completa: logo, palette colori, font, mockup e brand guidelines pronte all'uso.", longDescription:"Il tuo brand è la prima impressione che dai. Ti consegno un'identità visiva completa e professionale: logo in tutte le varianti, palette colori con codici HEX, selezione font, brand pattern, mockup applicati e brand guidelines. Tutto in formato editabile.", price:"Da €300", cta:"Richiedi info", tag:"🔥 Nuovo" },
-  { id:4, category:"Web", emoji:"💻", title:"Siti Web", description:"Siti web professionali, veloci e mobile-first per creator, coach e piccole imprese. Design curato e su misura.", longDescription:"Creo siti web che non sono solo belli, ma che convertono. Design personalizzato, ottimizzazione mobile, SEO base e integrazione con i tuoi strumenti preferiti. Consegna in 2-3 settimane. Hai già un sito? Posso rinnovarlo.", price:"Da €500", cta:"Vedi portfolio", tag:null },
-  { id:5, category:"Tech", emoji:"🚀", title:"Web App & Tool AI", description:"Sviluppo webapp personalizzate, strumenti AI e automazioni per ottimizzare il tuo business digitale.", longDescription:"Hai un'idea o un processo ripetitivo che vorresti automatizzare? Creo webapp su misura, tool con intelligenza artificiale integrata, dashboard personalizzate e automazioni. Perfetto per coach, agenzie e piccoli business.", price:"Su preventivo", cta:"Parliamone", tag:"💡 AI Powered" }
+{ id:1, category:“Social Media”, emoji:“📱”, title:“Gestione Social Media”, description:“Mi occupo di tutto: strategia, contenuti, pubblicazione e analytics per far crescere il tuo profilo in modo organico.”, longDescription:“Un servizio completo pensato per chi vuole smettere di preoccuparsi dei social e concentrarsi sul proprio business. Creo il tuo piano editoriale mensile, produco i contenuti (grafiche, caption, hashtag), mi occupo della pubblicazione e monitoro le performance. Lavoriamo insieme per costruire una community reale, senza trucchi e senza ads.”, price:“Su preventivo”, cta:“Scopri di più”, tag:“⭐ Più richiesto” },
+{ id:2, category:“Strategia”, emoji:“🎯”, title:“Strategia Instagram”, description:“Sessione 1:1 per definire la tua strategia di crescita organica, content plan e posizionamento sul mercato.”, longDescription:“Una sessione intensiva di 60 minuti in cui analizziamo il tuo profilo attuale, definiamo il tuo target ideale, costruiamo una strategia di contenuti su misura e ti do un piano d’azione chiaro e replicabile. Ideale per chi vuole risultati concreti e un metodo da seguire ogni mese.”, price:“€150”, cta:“Prenota ora”, tag:null, stripeUrl:“https://buy.stripe.com/5kQfZa5AX4zCcZm7cI7bW00” },
+{ id:3, category:“Branding”, emoji:“✨”, title:“Logo & Brand Identity”, description:“Creo la tua identità visiva completa: logo, palette colori, font, mockup e brand guidelines pronte all’uso.”, longDescription:“Il tuo brand è la prima impressione che dai. Ti consegno un’identità visiva completa e professionale: logo in tutte le varianti, palette colori con codici HEX, selezione font, brand pattern, mockup applicati e brand guidelines. Tutto in formato editabile.”, price:“Da €300”, cta:“Richiedi info”, tag:“🔥 Nuovo” },
+{ id:4, category:“Web”, emoji:“💻”, title:“Siti Web”, description:“Siti web professionali, veloci e mobile-first per creator, coach e piccole imprese. Design curato e su misura.”, longDescription:“Creo siti web che non sono solo belli, ma che convertono. Design personalizzato, ottimizzazione mobile, SEO base e integrazione con i tuoi strumenti preferiti. Consegna in 2-3 settimane. Hai già un sito? Posso rinnovarlo.”, price:“Da €500”, cta:“Vedi portfolio”, tag:null },
+{ id:5, category:“Tech”, emoji:“🚀”, title:“Web App & Tool AI”, description:“Sviluppo webapp personalizzate, strumenti AI e automazioni per ottimizzare il tuo business digitale.”, longDescription:“Hai un’idea o un processo ripetitivo che vorresti automatizzare? Creo webapp su misura, tool con intelligenza artificiale integrata, dashboard personalizzate e automazioni. Perfetto per coach, agenzie e piccoli business.”, price:“Su preventivo”, cta:“Parliamone”, tag:“💡 AI Powered” },
+{ id:6, category:“Digitale”, emoji:“🎬”, title:“Guida CapCut”, description:“Impara a editare video in modo professionale per Reels, TikTok e YouTube Shorts con CapCut.”, longDescription:“Una guida pratica e immediata per imparare a usare CapCut da zero o migliorare il tuo editing. Tagli, transizioni, testi animati, audio, effetti AI e tutto quello che ti serve per creare video che fermano lo scroll. Perfetta per creator, freelance e piccole imprese che vogliono produrre video professionali in autonomia.”, price:“€17”, cta:“Acquista ora”, tag:“🔥 Entry level”, stripeUrl:“INSERISCI_LINK_STRIPE” },
+{ id:7, category:“Digitale”, emoji:“🤖”, title:“AI Social Media Toolkit”, description:“Il kit completo di tool e prompt AI che uso ogni giorno per creare contenuti social in metà tempo.”, longDescription:“Il mio stack AI personale impacchettato per te: prompt pack per Claude, ChatGPT e GPTs personalizzati, guida a Napkin AI per creare visual dalla strategia, guida ElevenLabs per i contenuti audio, guida CapCut per i video, calendario editoriale AI-powered e una guida introduttiva su quale tool usare per cosa. Tutto quello che ti serve per lavorare più veloce e meglio.”, price:“€47”, cta:“Acquista ora”, tag:“⭐ Più venduto”, stripeUrl:“INSERISCI_LINK_STRIPE” },
+{ id:8, category:“Digitale”, emoji:“📊”, title:“Instagram Check-up in 24h”, description:“Analizzo il tuo profilo e ti mando un vocale/video con 5 cose da cambiare subito.”, longDescription:“Ti mando un’analisi completa del tuo profilo Instagram in formato vocale o video entro 24 ore. Guardo bio, feed, contenuti, hashtag, strategia e ti dico esattamente le 5 cose da cambiare subito per migliorare la tua presenza e attirare i clienti giusti. Niente teorie — solo azioni concrete e immediate.”, price:“€39”, cta:“Acquista ora”, tag:“⚡ Consegna 24h”, stripeUrl:“INSERISCI_LINK_STRIPE” },
+{ id:9, category:“Digitale”, emoji:“🎯”, title:“La tua Bio perfetta”, description:“Riscrivo la tua bio Instagram + link in bio strategy su misura per te.”, longDescription:“La tua bio è la prima cosa che vedono i tuoi potenziali clienti — se non li convince in 3 secondi, li perdi. Ti riscrivo la bio Instagram in modo che comunichi chiaramente chi sei, cosa fai e perché sceglierti. Incluso: ottimizzazione del nome utente, call to action efficace e strategia per il link in bio.”, price:“€19”, cta:“Acquista ora”, tag:“🔥 Entry level”, stripeUrl:“INSERISCI_LINK_STRIPE” },
+{ id:10, category:“Digitale”, emoji:“📅”, title:“Calendario Editoriale”, description:“30 contenuti pensati seguendo la tua strategia, pronti da pubblicare.”, longDescription:“Ti consegno un calendario editoriale completo con 30 idee contenuto personalizzate per il tuo brand e settore. Ogni contenuto include: formato consigliato (reel, carosello, storia), topic, hook di apertura e obiettivo. Basato sulla tua strategia, il tuo tono di voce e il tuo pubblico target. Pronto all’uso in pochi giorni.”, price:“€47”, cta:“Acquista ora”, tag:null, stripeUrl:“INSERISCI_LINK_STRIPE” },
+{ id:11, category:“Digitale”, emoji:“💡”, title:“Idea Generator”, description:“Sessione 30 min per sbloccare idee contenuti per il prossimo mese.”, longDescription:“Blocco creativo? Non sai di cosa parlare? In 30 minuti insieme troviamo tutte le idee contenuto per il tuo prossimo mese. Lavoriamo sul tuo settore, il tuo pubblico e il tuo stile per generare idee autentiche, originali e pronte da trasformare in post. Uscirai dalla call con un foglio pieno di spunti.”, price:“€49”, cta:“Prenota ora”, tag:null, stripeUrl:“INSERISCI_LINK_STRIPE” }
 ];
 
-var currentCategory = "Tutti";
+var currentCategory = “Tutti”;
 
 function renderCards() {
-  var container = document.getElementById("cards-container");
-  var filtered = currentCategory === "Tutti" ? services : services.filter(function(s){ return s.category === currentCategory; });
-  var html = "";
-  for (var i = 0; i < filtered.length; i++) {
-    var s = filtered[i];
-    var tagHtml = s.tag ? '<span class="card-tag">'+s.tag+'</span>' : "";
-    html += '<div class="card" onclick="openService('+s.id+')">'
-      +'<div class="card-inner">'
-      +'<div class="card-icon">'+s.emoji+'</div>'
-      +'<div class="card-body">'
-      +'<div class="card-header"><span class="card-title">'+s.title+'</span>'+tagHtml+'</div>'
-      +'<p class="card-desc">'+s.description+'</p>'
-      +'<div class="card-footer">'
-      +'<span class="card-price">'+s.price+'</span>'
-      +'<button class="btn-cta" onclick="event.stopPropagation();openService('+s.id+')">'+s.cta+' →</button>'
-      +'</div></div></div></div>';
-  }
-  container.innerHTML = html;
+var container = document.getElementById(“cards-container”);
+var filtered = currentCategory === “Tutti” ? services : services.filter(function(s){ return s.category === currentCategory; });
+var html = “”;
+for (var i = 0; i < filtered.length; i++) {
+var s = filtered[i];
+var tagHtml = s.tag ? ‘<span class="card-tag">’+s.tag+’</span>’ : “”;
+html += ‘<div class="card" onclick="openService('+s.id+')">’
++’<div class="card-inner">’
++’<div class="card-icon">’+s.emoji+’</div>’
++’<div class="card-body">’
++’<div class="card-header"><span class="card-title">’+s.title+’</span>’+tagHtml+’</div>’
++’<p class="card-desc">’+s.description+’</p>’
++’<div class="card-footer">’
++’<span class="card-price">’+s.price+’</span>’
++’<button class="btn-cta" onclick="event.stopPropagation();openService('+s.id+')">’+s.cta+’ →</button>’
++’</div></div></div></div>’;
+}
+container.innerHTML = html;
 }
 
 function filterCat(btn, cat) {
-  var btns = document.querySelectorAll(".cat-btn");
-  for (var i = 0; i < btns.length; i++) btns[i].classList.remove("active");
-  btn.classList.add("active");
-  currentCategory = cat;
-  renderCards();
+var btns = document.querySelectorAll(”.cat-btn”);
+for (var i = 0; i < btns.length; i++) btns[i].classList.remove(“active”);
+btn.classList.add(“active”);
+currentCategory = cat;
+renderCards();
 }
 
 function switchTab(tab, btn) {
-  var sections = document.querySelectorAll(".section");
-  for (var i = 0; i < sections.length; i++) sections[i].classList.remove("active");
-  var tabBtns = document.querySelectorAll(".tab-btn");
-  for (var i = 0; i < tabBtns.length; i++) tabBtns[i].classList.remove("active");
-  document.getElementById("tab-"+tab).classList.add("active");
-  btn.classList.add("active");
+var sections = document.querySelectorAll(”.section”);
+for (var i = 0; i < sections.length; i++) sections[i].classList.remove(“active”);
+var tabBtns = document.querySelectorAll(”.tab-btn”);
+for (var i = 0; i < tabBtns.length; i++) tabBtns[i].classList.remove(“active”);
+document.getElementById(“tab-”+tab).classList.add(“active”);
+btn.classList.add(“active”);
 }
 
 function openService(id) {
-  var s = null;
-  for (var i = 0; i < services.length; i++) {
-    if (services[i].id === id) { s = services[i]; break; }
-  }
-  if (!s) return;
-  document.getElementById("m-emoji").textContent = s.emoji;
-  document.getElementById("m-title").textContent = s.title;
-  document.getElementById("m-price").textContent = s.price;
-  document.getElementById("m-desc").textContent = s.longDescription;
-  document.getElementById("m-email").href = "mailto:chiaraawebdesigner@gmail.com?subject=Richiesta info: "+s.title;
-  document.getElementById("modal-service").classList.add("open");
+var s = null;
+for (var i = 0; i < services.length; i++) {
+if (services[i].id === id) { s = services[i]; break; }
+}
+if (!s) return;
+document.getElementById(“m-emoji”).textContent = s.emoji;
+document.getElementById(“m-title”).textContent = s.title;
+document.getElementById(“m-price”).textContent = s.price;
+document.getElementById(“m-desc”).textContent = s.longDescription;
+document.getElementById(“m-email”).href = “mailto:chiaraawebdesigner@gmail.com?subject=Richiesta info: “+s.title;
+var stripeBtn = document.getElementById(“m-stripe”);
+if (s.stripeUrl) {
+stripeBtn.href = s.stripeUrl;
+stripeBtn.style.display = “block”;
+} else {
+stripeBtn.style.display = “none”;
+}
+document.getElementById(“modal-service”).classList.add(“open”);
 }
 
 renderCards();
@@ -377,11 +451,4 @@ renderCards();
   window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Le informazioni fornite non sono valide. Controlla il formato del campo e riprova.";
   window.REQUIRED_ERROR_MESSAGE = "Questo campo non può essere lasciato vuoto.";
   window.GENERIC_INVALID_MESSAGE = "Le informazioni fornite non sono valide. Controlla il formato del campo e riprova.";
-  window.translation = { common: { selectedList: '{quantity} lista selezionata', selectedLists: '{quantity} liste selezionate', selectedOption: '{quantity} selezionato', selectedOptions: '{quantity} selezionati' } };
-  var AUTOHIDE = Boolean(0);
-</script>
-
-<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
-
-</body>
-</html>
+  window.translation = { common: { selectedList: '{quantity} lista selezionata', selectedLists: '{quantity} liste selezionate', selectedOption: '{quantity} selezionato', selectedOptions: '{quantity} sele
