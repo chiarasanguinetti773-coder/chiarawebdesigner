@@ -15,236 +15,204 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:'Jost',sans-serif;background:var(--off);color:var(--dk);overflow-x:hidden}
-
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(253,250,248,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(–b200)}
-.logo{font-family:‘Cormorant Garamond’,serif;font-size:17px;font-weight:400;color:var(–dk)}
-.logo em{color:var(–f);font-style:italic}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(253,250,248,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--b200)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;color:var(--dk)}
+.logo em{color:var(--f);font-style:italic}
 .nav-links{display:flex;align-items:center;gap:28px}
-.nav-link{font-size:11px;font-weight:400;color:var(–body);text-decoration:none;letter-spacing:.5px;transition:color .2s}
-.nav-link:hover{color:var(–f)}
-.nav-btn{background:var(–f);color:#fff;border:none;border-radius:30px;padding:10px 22px;font-family:‘Jost’,sans-serif;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .3s;display:inline-block}
-.nav-btn:hover{background:var(–dk);transform:translateY(-1px)}
-
-/* ── HERO ── */
-.hero{min-height:100vh;display:flex;align-items:center;padding:120px 40px 80px;position:relative;overflow:hidden;background:var(–dk)}
+.nav-link{font-size:11px;font-weight:400;color:var(--body);text-decoration:none;letter-spacing:.5px;transition:color .2s}
+.nav-link:hover{color:var(--f)}
+.nav-btn{background:var(--f);color:#fff;border:none;border-radius:30px;padding:10px 22px;font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .3s;display:inline-block}
+.nav-btn:hover{background:var(--dk);transform:translateY(-1px)}
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 40px 80px;position:relative;overflow:hidden;background:var(--dk)}
 .h-orb1{position:absolute;top:-180px;right:-180px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(190,24,93,.22) 0%,transparent 65%)}
 .h-orb2{position:absolute;bottom:-100px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(236,72,153,.1) 0%,transparent 65%);animation:float 10s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
 .h-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:80px;align-items:center;position:relative;z-index:1}
-.h-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.25);border-radius:20px;padding:6px 14px;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(–fl);margin-bottom:24px}
-.h-pill::before{content:’’;width:6px;height:6px;border-radius:50%;background:var(–fl);animation:blink 2s infinite}
+.h-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.25);border-radius:20px;padding:6px 14px;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--fl);margin-bottom:24px}
+.h-pill::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--fl);animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(44px,5.5vw,70px);font-weight:300;line-height:1.02;color:#fff;margin-bottom:10px}
-h1 em{font-style:italic;color:var(–fl)}
-.h-sub{font-family:‘Cormorant Garamond’,serif;font-size:clamp(22px,2.5vw,30px);font-weight:300;color:rgba(255,255,255,.45);margin-bottom:28px;font-style:italic}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,5.5vw,70px);font-weight:300;line-height:1.02;color:#fff;margin-bottom:10px}
+h1 em{font-style:italic;color:var(--fl)}
+.h-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.5vw,30px);font-weight:300;color:rgba(255,255,255,.45);margin-bottom:28px;font-style:italic}
 .h-body{font-size:15px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.6);margin-bottom:36px;max-width:460px}
 .h-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
-.btn-main{background:var(–f);color:#fff;border:none;border-radius:30px;padding:16px 30px;font-family:‘Jost’,sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s}
-.btn-main:hover{background:var(–fl);transform:translateY(-2px);box-shadow:0 12px 30px rgba(190,24,93,.4)}
-.btn-out{background:transparent;color:rgba(255,255,255,.75);border:1.5px solid rgba(255,255,255,.18);border-radius:30px;padding:15px 26px;font-family:‘Jost’,sans-serif;font-size:12px;font-weight:400;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s}
-.btn-out:hover{border-color:var(–fl);color:var(–fl)}
+.btn-main{background:var(--f);color:#fff;border:none;border-radius:30px;padding:16px 30px;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s}
+.btn-main:hover{background:var(--fl);transform:translateY(-2px);box-shadow:0 12px 30px rgba(190,24,93,.4)}
+.btn-out{background:transparent;color:rgba(255,255,255,.75);border:1.5px solid rgba(255,255,255,.18);border-radius:30px;padding:15px 26px;font-family:'Jost',sans-serif;font-size:12px;font-weight:400;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s}
+.btn-out:hover{border-color:var(--fl);color:var(--fl)}
 .h-stats{display:flex;gap:36px;padding-top:36px;border-top:1px solid rgba(255,255,255,.07)}
-.h-stat-n{font-family:‘Cormorant Garamond’,serif;font-size:38px;font-weight:600;color:#fff;line-height:1}
+.h-stat-n{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;color:#fff;line-height:1}
 .h-stat-l{font-size:10px;font-weight:300;color:rgba(255,255,255,.4);margin-top:3px;letter-spacing:.5px}
-
-/* hero card */
 .h-card{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:34px;backdrop-filter:blur(12px);position:relative;overflow:hidden}
-.h-card::before{content:’’;position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(–fl),var(–f))}
-.hc-title{font-family:‘Cormorant Garamond’,serif;font-size:22px;font-weight:400;color:#fff;margin-bottom:4px}
+.h-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--fl),var(--f))}
+.hc-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:#fff;margin-bottom:4px}
 .hc-sub{font-size:11px;color:rgba(255,255,255,.38);font-weight:300;margin-bottom:24px}
 .hc-item{display:flex;align-items:flex-start;gap:12px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.06)}
 .hc-item:last-of-type{border:none}
 .hc-icon{width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
 .hc-label{font-size:12px;font-weight:500;color:#fff;margin-bottom:2px}
 .hc-desc{font-size:10px;font-weight:300;color:rgba(255,255,255,.42);line-height:1.45}
-.hc-cta{margin-top:22px;background:var(–f);color:#fff;border:none;border-radius:12px;padding:14px 18px;width:100%;font-family:‘Jost’,sans-serif;font-size:12px;font-weight:500;text-align:center;cursor:pointer;text-decoration:none;display:block;transition:all .3s;letter-spacing:.3px}
-.hc-cta:hover{background:var(–fl)}
-
-/* ── STRIP ── */
-.strip{background:var(–f);padding:15px 0;overflow:hidden}
+.hc-cta{margin-top:22px;background:var(--f);color:#fff;border:none;border-radius:12px;padding:14px 18px;width:100%;font-family:'Jost',sans-serif;font-size:12px;font-weight:500;text-align:center;cursor:pointer;text-decoration:none;display:block;transition:all .3s;letter-spacing:.3px}
+.hc-cta:hover{background:var(--fl)}
+.strip{background:var(--f);padding:15px 0;overflow:hidden}
 .s-track{display:flex;gap:52px;animation:scroll 22s linear infinite;width:max-content}
 .s-item{display:flex;align-items:center;gap:10px;white-space:nowrap}
-.s-num{font-family:‘Cormorant Garamond’,serif;font-size:20px;font-weight:600;color:#fff}
+.s-num{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#fff}
 .s-text{font-size:11px;font-weight:300;color:rgba(255,255,255,.7)}
 .s-dot{color:rgba(255,255,255,.35)}
 @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* ── SHARED ── */
 section{padding:96px 40px;position:relative;z-index:1}
 .inner{max-width:1100px;margin:0 auto}
-.eyebrow{font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(–f);margin-bottom:12px;display:block}
-h2{font-family:‘Cormorant Garamond’,serif;font-size:clamp(32px,4vw,52px);font-weight:300;line-height:1.1;color:var(–dk);margin-bottom:14px}
-h2 em{font-style:italic;color:var(–f)}
-.sec-body{font-size:14px;font-weight:300;line-height:1.8;color:var(–body);max-width:520px}
-
-/* ── CHI SONO ── */
-.about{background:var(–w)}
+.eyebrow{font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--f);margin-bottom:12px;display:block}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:300;line-height:1.1;color:var(--dk);margin-bottom:14px}
+h2 em{font-style:italic;color:var(--f)}
+.sec-body{font-size:14px;font-weight:300;line-height:1.8;color:var(--body);max-width:520px}
+.about{background:var(--w)}
 .about-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:60px}
 .about-img{position:relative}
-.about-img-box{background:linear-gradient(145deg,var(–b100),var(–b200));border-radius:24px;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.about-img-box::after{content:’’;position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,rgba(190,24,93,.15),transparent)}
-.about-placeholder{font-family:‘Cormorant Garamond’,serif;font-size:80px;color:var(–r300);opacity:.4;user-select:none}
-.about-badge{position:absolute;bottom:-16px;right:-16px;background:var(–f);color:#fff;border-radius:20px;padding:12px 18px;text-align:center;box-shadow:0 8px 24px rgba(190,24,93,.3)}
-.ab-num{font-family:‘Cormorant Garamond’,serif;font-size:28px;font-weight:600;line-height:1}
+.about-img-box{background:linear-gradient(145deg,var(--b100),var(--b200));border-radius:24px;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.about-img-box::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,rgba(190,24,93,.15),transparent)}
+.about-placeholder{font-family:'Cormorant Garamond',serif;font-size:80px;color:var(--r300);opacity:.4;user-select:none}
+.about-badge{position:absolute;bottom:-16px;right:-16px;background:var(--f);color:#fff;border-radius:20px;padding:12px 18px;text-align:center;box-shadow:0 8px 24px rgba(190,24,93,.3)}
+.ab-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;line-height:1}
 .ab-label{font-size:9px;font-weight:300;opacity:.8;letter-spacing:.5px;margin-top:1px}
-.about-tag{display:inline-block;background:var(–fp);border:1px solid var(–r300);border-radius:20px;padding:4px 12px;font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(–f);margin-bottom:16px}
-.about-title{font-family:‘Cormorant Garamond’,serif;font-size:clamp(32px,3.5vw,46px);font-weight:300;line-height:1.1;color:var(–dk);margin-bottom:20px}
-.about-title em{font-style:italic;color:var(–f)}
-.about-text{font-size:14px;font-weight:300;line-height:1.85;color:var(–body);margin-bottom:14px}
+.about-tag{display:inline-block;background:var(--fp);border:1px solid var(--r300);border-radius:20px;padding:4px 12px;font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--f);margin-bottom:16px}
+.about-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3.5vw,46px);font-weight:300;line-height:1.1;color:var(--dk);margin-bottom:20px}
+.about-title em{font-style:italic;color:var(--f)}
+.about-text{font-size:14px;font-weight:300;line-height:1.85;color:var(--body);margin-bottom:14px}
 .about-values{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
-.av-item{background:var(–b50);border-radius:12px;padding:14px;border:1px solid var(–b200)}
+.av-item{background:var(--b50);border-radius:12px;padding:14px;border:1px solid var(--b200)}
 .av-icon{font-size:18px;margin-bottom:6px}
-.av-label{font-size:12px;font-weight:500;color:var(–dk);margin-bottom:3px}
-.av-desc{font-size:11px;font-weight:300;color:var(–body);line-height:1.4}
-
-/* ── SERVIZI 1:1 ── */
-.services{background:var(–b50)}
+.av-label{font-size:12px;font-weight:500;color:var(--dk);margin-bottom:3px}
+.av-desc{font-size:11px;font-weight:300;color:var(--body);line-height:1.4}
+.services{background:var(--b50)}
 .sg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
-.sc{background:var(–w);border-radius:22px;padding:34px 28px;position:relative;overflow:hidden;transition:all .4s;border:1px solid var(–b200);display:flex;flex-direction:column}
-.sc:hover{transform:translateY(-6px);box-shadow:0 24px 56px rgba(190,24,93,.09);border-color:var(–r300)}
-.sc.feat{background:var(–dk)}
-.s-tag{display:inline-block;background:var(–fp);color:var(–f);border-radius:20px;padding:4px 12px;font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px}
-.sc.feat .s-tag{background:rgba(236,72,153,.18);color:var(–fl)}
-.s-pop{position:absolute;top:18px;right:18px;background:var(–f);color:#fff;border-radius:20px;padding:4px 12px;font-size:9px;font-weight:500;letter-spacing:1px;text-transform:uppercase}
-.s-name{font-family:‘Cormorant Garamond’,serif;font-size:26px;font-weight:300;color:var(–dk);margin-bottom:8px;line-height:1.15}
+.sc{background:var(--w);border-radius:22px;padding:34px 28px;position:relative;overflow:hidden;transition:all .4s;border:1px solid var(--b200);display:flex;flex-direction:column}
+.sc:hover{transform:translateY(-6px);box-shadow:0 24px 56px rgba(190,24,93,.09);border-color:var(--r300)}
+.sc.feat{background:var(--dk)}
+.s-tag{display:inline-block;background:var(--fp);color:var(--f);border-radius:20px;padding:4px 12px;font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px}
+.sc.feat .s-tag{background:rgba(236,72,153,.18);color:var(--fl)}
+.s-pop{position:absolute;top:18px;right:18px;background:var(--f);color:#fff;border-radius:20px;padding:4px 12px;font-size:9px;font-weight:500;letter-spacing:1px;text-transform:uppercase}
+.s-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--dk);margin-bottom:8px;line-height:1.15}
 .s-name em{font-style:italic}
 .sc.feat .s-name{color:#fff}
-.s-desc{font-size:12px;font-weight:300;line-height:1.7;color:var(–body);margin-bottom:20px}
+.s-desc{font-size:12px;font-weight:300;line-height:1.7;color:var(--body);margin-bottom:20px}
 .sc.feat .s-desc{color:rgba(255,255,255,.52)}
 .s-inc{flex:1;margin-bottom:24px}
-.s-i{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:300;color:var(–body);padding:7px 0;border-bottom:1px solid var(–b100);line-height:1.3}
+.s-i{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:300;color:var(--body);padding:7px 0;border-bottom:1px solid var(--b100);line-height:1.3}
 .s-i:last-child{border:none}
 .sc.feat .s-i{color:rgba(255,255,255,.58);border-color:rgba(255,255,255,.07)}
-.s-ic{color:var(–fl);font-size:10px;flex-shrink:0}
-
-/* price block */
+.s-ic{color:var(--fl);font-size:10px;flex-shrink:0}
 .price-block{border-radius:14px;overflow:hidden;border:none;display:block;text-decoration:none;transition:all .3s;cursor:pointer}
 .price-block:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(190,24,93,.22)}
 .pb-top{padding:16px 20px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
-.pb-top.light{background:var(–f)}
-.pb-top.dark{background:var(–dk)}
-.pb-top.muted{background:var(–b200)}
-.pb-price{font-family:‘Cormorant Garamond’,serif;font-size:32px;font-weight:600;color:#fff;line-height:1}
-.pb-top.muted .pb-price{color:var(–dk);font-size:22px;font-family:‘Jost’,sans-serif;font-weight:500;letter-spacing:-.3px}
+.pb-top.light{background:var(--f)}
+.pb-top.dark{background:var(--dk)}
+.pb-top.muted{background:var(--b200)}
+.pb-price{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:#fff;line-height:1}
+.pb-top.muted .pb-price{color:var(--dk);font-size:22px;font-family:'Jost',sans-serif;font-weight:500;letter-spacing:-.3px}
 .pb-note{font-size:9px;font-weight:300;color:rgba(255,255,255,.6);text-align:right;line-height:1.4;max-width:100px}
-.pb-top.muted .pb-note{color:var(–body)}
-.pb-action{background:var(–dk);color:#fff;padding:12px 20px;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-align:center}
-.sc.feat .pb-action{background:var(–fl)}
-.pb-top.muted + .pb-action{background:var(–f)}
-
-/* ── WEBAPP ── */
-.webapp{background:var(–dk)}
+.pb-top.muted .pb-note{color:var(--body)}
+.pb-action{background:var(--dk);color:#fff;padding:12px 20px;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-align:center}
+.sc.feat .pb-action{background:var(--fl)}
+.pb-top.muted + .pb-action{background:var(--f)}
+.webapp{background:var(--dk)}
 .webapp h2{color:#fff}
 .webapp .sec-body{color:rgba(255,255,255,.45)}
 .wg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
 .wc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:30px 26px;transition:all .4s;display:flex;flex-direction:column;position:relative;overflow:hidden}
-.wc::before{content:’’;position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(–fl),var(–f));transform:scaleX(0);transition:transform .4s;transform-origin:left}
+.wc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--fl),var(--f));transform:scaleX(0);transition:transform .4s;transform-origin:left}
 .wc:hover{background:rgba(255,255,255,.07);border-color:rgba(236,72,153,.3);transform:translateY(-5px)}
 .wc:hover::before{transform:scaleX(1)}
 .w-emoji{font-size:30px;margin-bottom:14px}
-.w-name{font-family:‘Cormorant Garamond’,serif;font-size:22px;font-weight:300;color:#fff;margin-bottom:8px;line-height:1.2}
-.w-name em{font-style:italic;color:var(–fl)}
+.w-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#fff;margin-bottom:8px;line-height:1.2}
+.w-name em{font-style:italic;color:var(--fl)}
 .w-desc{font-size:12px;font-weight:300;line-height:1.65;color:rgba(255,255,255,.48);flex:1;margin-bottom:18px}
 .w-inc{margin-bottom:20px}
 .w-i{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:300;color:rgba(255,255,255,.48);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06);line-height:1.3}
 .w-i:last-child{border:none}
-.w-ic{color:var(–fl);font-size:10px}
+.w-ic{color:var(--fl);font-size:10px}
 .w-price-block{border-radius:12px;overflow:hidden;text-decoration:none;display:block;transition:all .3s}
 .w-price-block:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(236,72,153,.25)}
 .wpb-top{background:rgba(236,72,153,.14);border:1px solid rgba(236,72,153,.22);padding:14px 16px;border-radius:12px 12px 0 0}
-.wpb-price{font-family:‘Cormorant Garamond’,serif;font-size:22px;font-weight:600;color:var(–fl);line-height:1;margin-bottom:3px}
+.wpb-price{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--fl);line-height:1;margin-bottom:3px}
 .wpb-note{font-size:9px;font-weight:300;color:rgba(255,255,255,.35);letter-spacing:.3px}
-.wpb-action{background:var(–f);color:#fff;padding:11px 16px;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-align:center;border-radius:0 0 12px 12px}
-
-/* ── RISULTATI ── */
-.results{background:var(–w)}
+.wpb-action{background:var(--f);color:#fff;padding:11px 16px;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-align:center;border-radius:0 0 12px 12px}
+.results{background:var(--w)}
 .rg{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:56px}
-.rc{background:var(–b50);border-radius:20px;padding:30px;border:1px solid var(–b200);position:relative;overflow:hidden;transition:all .3s}
+.rc{background:var(--b50);border-radius:20px;padding:30px;border:1px solid var(--b200);position:relative;overflow:hidden;transition:all .3s}
 .rc:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(190,24,93,.07)}
-.rc::after{content:’’;position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(–fl),var(–f));transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.rc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--fl),var(--f));transform:scaleX(0);transition:transform .3s;transform-origin:left}
 .rc:hover::after{transform:scaleX(1)}
-.r-sec{font-size:9px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(–f);margin-bottom:12px}
-.r-q{font-family:‘Cormorant Garamond’,serif;font-size:19px;font-weight:300;font-style:italic;line-height:1.5;color:var(–dk);margin-bottom:16px}
+.r-sec{font-size:9px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--f);margin-bottom:12px}
+.r-q{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300;font-style:italic;line-height:1.5;color:var(--dk);margin-bottom:16px}
 .r-metrics{display:flex;gap:22px}
-.r-num{font-family:‘Cormorant Garamond’,serif;font-size:30px;font-weight:600;color:var(–f);line-height:1}
-.r-label{font-size:10px;font-weight:300;color:var(–soft);margin-top:3px}
-
-/* ── DIGITALI ── */
-.digitali{background:var(–b50)}
+.r-num{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:var(--f);line-height:1}
+.r-label{font-size:10px;font-weight:300;color:var(--soft);margin-top:3px}
+.digitali{background:var(--b50)}
 .dg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
-.dc{background:var(–w);border-radius:18px;padding:26px 22px;border:1px solid var(–b200);transition:all .35s;display:flex;flex-direction:column;position:relative;overflow:hidden}
-.dc:hover{transform:translateY(-5px);box-shadow:0 18px 46px rgba(190,24,93,.08);border-color:var(–r300)}
-.dc::before{content:’’;position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(–fl),var(–f));transform:scaleX(0);transition:transform .35s;transform-origin:left}
+.dc{background:var(--w);border-radius:18px;padding:26px 22px;border:1px solid var(--b200);transition:all .35s;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.dc:hover{transform:translateY(-5px);box-shadow:0 18px 46px rgba(190,24,93,.08);border-color:var(--r300)}
+.dc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--fl),var(--f));transform:scaleX(0);transition:transform .35s;transform-origin:left}
 .dc:hover::before{transform:scaleX(1)}
 .d-emoji{font-size:32px;margin-bottom:14px}
-.d-name{font-family:‘Cormorant Garamond’,serif;font-size:20px;font-weight:400;color:var(–dk);margin-bottom:8px;line-height:1.2}
+.d-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--dk);margin-bottom:8px;line-height:1.2}
 .d-name em{font-style:italic}
-.d-desc{font-size:11px;font-weight:300;line-height:1.6;color:var(–body);flex:1;margin-bottom:16px}
+.d-desc{font-size:11px;font-weight:300;line-height:1.6;color:var(--body);flex:1;margin-bottom:16px}
 .d-price-block{border-radius:12px;overflow:hidden;text-decoration:none;display:block;transition:all .3s}
 .d-price-block:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(190,24,93,.2)}
-.dpb-top{background:var(–f);color:#fff;padding:13px 16px;display:flex;align-items:center;justify-content:space-between}
-.dpb-price{font-family:‘Cormorant Garamond’,serif;font-size:26px;font-weight:600;line-height:1}
+.dpb-top{background:var(--f);color:#fff;padding:13px 16px;display:flex;align-items:center;justify-content:space-between}
+.dpb-price{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;line-height:1}
 .dpb-action{font-size:10px;font-weight:500;letter-spacing:1px;opacity:.85}
-.dpb-bottom{background:var(–dk);color:#fff;padding:10px 16px;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-align:center}
-.dc.bundle{background:var(–fp);border-color:var(–r300)}
+.dpb-bottom{background:var(--dk);color:#fff;padding:10px 16px;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-align:center}
+.dc.bundle{background:var(--fp);border-color:var(--r300)}
 .dc.bundle .dpb-top{background:#7c1542}
-.dc.bundle .dpb-bottom{background:var(–f)}
-
-/* ── TESTIMONIANZE ── */
-.testi{background:var(–dk)}
+.dc.bundle .dpb-bottom{background:var(--f)}
+.testi{background:var(--dk)}
 .testi h2{color:#fff}
 .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px}
 .tc{background:rgba(255,255,255,.04);border-radius:18px;padding:28px;border:1px solid rgba(255,255,255,.07);transition:all .3s}
 .tc:hover{background:rgba(255,255,255,.07);transform:translateY(-4px)}
-.t-quote{font-size:36px;color:rgba(255,255,255,.15);font-family:‘Cormorant Garamond’,serif;line-height:1;margin-bottom:10px}
+.t-quote{font-size:36px;color:rgba(255,255,255,.15);font-family:'Cormorant Garamond',serif;line-height:1;margin-bottom:10px}
 .t-text{font-size:13px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.58);margin-bottom:20px;font-style:italic}
 .t-author{display:flex;align-items:center;gap:10px}
-.t-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,rgba(236,72,153,.3),rgba(190,24,93,.5));display:flex;align-items:center;justify-content:center;font-family:‘Cormorant Garamond’,serif;font-size:15px;font-weight:600;color:#fff;flex-shrink:0}
+.t-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,rgba(236,72,153,.3),rgba(190,24,93,.5));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;color:#fff;flex-shrink:0}
 .t-name{font-size:12px;font-weight:500;color:#fff}
 .t-role{font-size:10px;font-weight:300;color:rgba(255,255,255,.38)}
-
-/* ── CTA ── */
-.cta-s{background:var(–f);text-align:center;padding:100px 40px;position:relative;overflow:hidden}
-.cta-s::before{content:’’;position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.08) 0%,transparent 60%)}
+.cta-s{background:var(--f);text-align:center;padding:100px 40px;position:relative;overflow:hidden}
+.cta-s::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.08) 0%,transparent 60%)}
 .cta-s .eyebrow{color:rgba(255,255,255,.5)}
-.cta-title{font-family:‘Cormorant Garamond’,serif;font-size:clamp(36px,5vw,62px);font-weight:300;line-height:1.08;color:#fff;margin-bottom:18px;position:relative;z-index:1}
+.cta-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,62px);font-weight:300;line-height:1.08;color:#fff;margin-bottom:18px;position:relative;z-index:1}
 .cta-title em{font-style:italic;color:#fff}
 .cta-body{font-size:15px;font-weight:300;color:rgba(255,255,255,.72);margin-bottom:38px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.8;position:relative;z-index:1}
 .cta-urgency{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 16px;font-size:11px;font-weight:400;color:rgba(255,255,255,.8);margin-bottom:28px;letter-spacing:.5px;position:relative;z-index:1}
-.cta-btn{background:#fff;color:var(–f);border:none;border-radius:30px;padding:18px 40px;font-family:‘Jost’,sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s;position:relative;z-index:1}
-.cta-btn:hover{background:var(–dk);color:#fff;transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.22)}
+.cta-btn{background:#fff;color:var(--f);border:none;border-radius:30px;padding:18px 40px;font-family:'Jost',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s;position:relative;z-index:1}
+.cta-btn:hover{background:var(--dk);color:#fff;transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.22)}
 .cta-alt{margin-top:16px;font-size:13px;color:rgba(255,255,255,.9);position:relative;z-index:1}
 .cta-alt a{color:#fff;text-decoration:none;border-bottom:2px solid rgba(255,255,255,.6);font-weight:500;padding-bottom:1px}
-
-footer{background:var(–dk);color:rgba(255,255,255,.3);padding:36px 40px;text-align:center;font-size:11px;font-weight:300;line-height:2;border-top:1px solid rgba(255,255,255,.05)}
+footer{background:var(--dk);color:rgba(255,255,255,.3);padding:36px 40px;text-align:center;font-size:11px;font-weight:300;line-height:2;border-top:1px solid rgba(255,255,255,.05)}
 footer a{color:rgba(255,255,255,.3);text-decoration:none}
-footer a:hover{color:var(–fl)}
-
+footer a:hover{color:var(--fl)}
 @media(max-width:768px){
-nav{padding:14px 20px}
-.nav-links{display:none}
-.hero{padding:100px 20px 60px}
-.h-inner{grid-template-columns:1fr;gap:40px}
-.h-card{display:none}
-section{padding:70px 20px}
-.about-inner{grid-template-columns:1fr}
-.about-img{display:none}
-.sg,.wg{grid-template-columns:1fr}
-.rg{grid-template-columns:1fr}
-.dg{grid-template-columns:1fr 1fr}
-.tg{grid-template-columns:1fr}
-.cta-s{padding:70px 20px}
-.h-stats{gap:20px}
-footer{padding:28px 20px}
+  nav{padding:14px 20px}
+  .nav-links{display:none}
+  .hero{padding:100px 20px 60px}
+  .h-inner{grid-template-columns:1fr;gap:40px}
+  .h-card{display:none}
+  section{padding:70px 20px}
+  .about-inner{grid-template-columns:1fr}
+  .about-img{display:none}
+  .sg,.wg{grid-template-columns:1fr}
+  .rg{grid-template-columns:1fr}
+  .dg{grid-template-columns:1fr 1fr}
+  .tg{grid-template-columns:1fr}
+  .cta-s{padding:70px 20px}
+  .h-stats{gap:20px}
+  footer{padding:28px 20px}
 }
 </style>
-
 </head>
 <body>
-
-<!-- NAV -->
-
 <nav>
   <div class="logo">Chiara | La SMM <em>senza filtri</em></div>
   <div class="nav-links">
@@ -252,22 +220,19 @@ footer{padding:28px 20px}
     <a href="#servizi" class="nav-link">Servizi</a>
     <a href="#webapp" class="nav-link">WebApp</a>
     <a href="#risultati" class="nav-link">Risultati</a>
-    <a href="https://calendly.com/chiaraawebdesigner/call-conoscitiva-gratuita" class="nav-btn" target="_blank">Analisi Gratuita →</a>
+    <a href="https://calendly.com/chiaraawebdesigner/call-conoscitiva-gratuita" class="nav-btn" target="_blank">Analisi Gratuita &rarr;</a>
   </div>
 </nav>
-
-<!-- HERO -->
-
 <section class="hero">
   <div class="h-orb1"></div><div class="h-orb2"></div>
   <div class="h-inner">
     <div>
-      <div class="h-pill">SMM · WebApp · Roma 🇮🇹</div>
+      <div class="h-pill">SMM &middot; WebApp &middot; Roma &#127470;&#127481;</div>
       <h1>Hai follower<br>ma non hai<br><em>clienti.</em></h1>
-      <p class="h-sub">Ecco perché — e come cambia.</p>
+      <p class="h-sub">Ecco perch&eacute; &mdash; e come cambia.</p>
       <p class="h-body">Aiuto business e professionisti italiani a vendere sui social e online. Strategia social, gestione profili, siti web e webapp su misura. Risultati reali, zero teoria.</p>
       <div class="h-btns">
-        <a href="https://calendly.com/chiaraawebdesigner/call-conoscitiva-gratuita" class="btn-main" target="_blank">🎯 Analisi gratuita del profilo</a>
+        <a href="https://calendly.com/chiaraawebdesigner/call-conoscitiva-gratuita" class="btn-main" target="_blank">&#127919; Analisi gratuita del profilo</a>
         <a href="#servizi" class="btn-out">Scopri i servizi</a>
       </div>
       <div class="h-stats">
@@ -278,215 +243,162 @@ footer{padding:28px 20px}
     </div>
     <div class="h-card">
       <div class="hc-title">Analisi profilo gratuita</div>
-      <div class="hc-sub">30 minuti · Nessun impegno</div>
-      <div class="hc-item"><div class="hc-icon">📊</div><div><div class="hc-label">Bio & Posizionamento</div><div class="hc-desc">Chi sei, per chi sei, cosa ti differenzia</div></div></div>
-      <div class="hc-item"><div class="hc-icon">🎯</div><div><div class="hc-label">Strategia contenuti</div><div class="hc-desc">Cosa funziona e cosa frena la crescita</div></div></div>
-      <div class="hc-item"><div class="hc-icon">💰</div><div><div class="hc-label">Funnel di conversione</div><div class="hc-desc">Perché i follower non diventano clienti</div></div></div>
-      <div class="hc-item"><div class="hc-icon">🚀</div><div><div class="hc-label">Piano d'azione</div><div class="hc-desc">3 cose da fare subito per migliorare</div></div></div>
-      <a href="https://calendly.com/chiaraawebdesigner/call-conoscitiva-gratuita" class="hc-cta" target="_blank">Prenota gratis — 30 minuti →</a>
+      <div class="hc-sub">30 minuti &middot; Nessun impegno</div>
+      <div class="hc-item"><div class="hc-icon">&#128202;</div><div><div class="hc-label">Bio &amp; Posizionamento</div><div class="hc-desc">Chi sei, per chi sei, cosa ti differenzia</div></div></div>
+      <div class="hc-item"><div class="hc-icon">&#127919;</div><div><div class="hc-label">Strategia contenuti</div><div class="hc-desc">Cosa funziona e cosa frena la crescita</div></div></div>
+      <div class="hc-item"><div class="hc-icon">&#128176;</div><div><div class="hc-label">Funnel di conversione</div><div class="hc-desc">Perch&eacute; i follower non diventano clienti</div></div></div>
+      <div class="hc-item"><div class="hc-icon">&#128640;</div><div><div class="hc-label">Piano d&rsquo;azione</div><div class="hc-desc">3 cose da fare subito per migliorare</div></div></div>
+      <a href="https://calendly.com/chiaraawebdesigner/call-conoscitiva-gratuita" class="hc-cta" target="_blank">Prenota gratis &mdash; 30 minuti &rarr;</a>
     </div>
   </div>
 </section>
-
-<!-- STRIP -->
-
 <div class="strip">
   <div class="s-track">
-    <div class="s-item"><span class="s-num">344K</span><span class="s-text">views sul video più visto</span></div><span class="s-dot">·</span>
-    <div class="s-item"><span class="s-num">40+</span><span class="s-text">richieste analisi in un video</span></div><span class="s-dot">·</span>
-    <div class="s-item"><span class="s-num">1K+</span><span class="s-text">follower TikTok in pochi mesi</span></div><span class="s-dot">·</span>
-    <div class="s-item"><span class="s-num">20+</span><span class="s-text">business locali ottimizzati</span></div><span class="s-dot">·</span>
-    <div class="s-item"><span class="s-num">344K</span><span class="s-text">views sul video più visto</span></div><span class="s-dot">·</span>
-    <div class="s-item"><span class="s-num">40+</span><span class="s-text">richieste analisi in un video</span></div><span class="s-dot">·</span>
-    <div class="s-item"><span class="s-num">1K+</span><span class="s-text">follower TikTok in pochi mesi</span></div><span class="s-dot">·</span>
-    <div class="s-item"><span class="s-num">20+</span><span class="s-text">business locali ottimizzati</span></div><span class="s-dot">·</span>
+    <div class="s-item"><span class="s-num">344K</span><span class="s-text">views sul video pi&ugrave; visto</span></div><span class="s-dot">&middot;</span>
+    <div class="s-item"><span class="s-num">40+</span><span class="s-text">richieste analisi in un video</span></div><span class="s-dot">&middot;</span>
+    <div class="s-item"><span class="s-num">1K+</span><span class="s-text">follower TikTok in pochi mesi</span></div><span class="s-dot">&middot;</span>
+    <div class="s-item"><span class="s-num">20+</span><span class="s-text">business locali ottimizzati</span></div><span class="s-dot">&middot;</span>
+    <div class="s-item"><span class="s-num">344K</span><span class="s-text">views sul video pi&ugrave; visto</span></div><span class="s-dot">&middot;</span>
+    <div class="s-item"><span class="s-num">40+</span><span class="s-text">richieste analisi in un video</span></div><span class="s-dot">&middot;</span>
+    <div class="s-item"><span class="s-num">1K+</span><span class="s-text">follower TikTok in pochi mesi</span></div><span class="s-dot">&middot;</span>
+    <div class="s-item"><span class="s-num">20+</span><span class="s-text">business locali ottimizzati</span></div><span class="s-dot">&middot;</span>
   </div>
 </div>
-
-<!-- CHI SONO -->
-
 <section class="about" id="about">
   <div class="inner">
     <div class="about-inner">
       <div class="about-img">
-        <div class="about-img-box">
-          <span class="about-placeholder">C</span>
-        </div>
-        <div class="about-badge">
-          <div class="ab-num">20+</div>
-          <div class="ab-label">Clienti soddisfatti</div>
-        </div>
+        <div class="about-img-box"><span class="about-placeholder">C</span></div>
+        <div class="about-badge"><div class="ab-num">20+</div><div class="ab-label">Clienti soddisfatti</div></div>
       </div>
       <div>
         <div class="about-tag">Chi sono</div>
         <h2 class="about-title">Sono Chiara.<br>Non ti vendo<br><em>sogni.</em></h2>
-        <p class="about-text">Sono una social media strategist e web designer con base a Roma. Ho creato <strong>@lasmmsenzafiltri</strong> perché ero stanca di vedere piccoli business buttare soldi in social che non portavano nulla — spesso seguendo consigli di guru che non avevano mai gestito un cliente vero.</p>
-        <p class="about-text">Lavoro con ristoratori, estetiste, medici, B&B, furgoni, negozi locali. Gestisco i social, creo video, costruisco siti web e webapp su misura. Tutto quello che serve per farsi trovare online e trasformarlo in clienti reali.</p>
+        <p class="about-text">Sono una social media strategist e web designer con base a Roma. Ho creato <strong>@lasmmsenzafiltri</strong> perch&eacute; ero stanca di vedere piccoli business buttare soldi in social che non portavano nulla &mdash; spesso seguendo consigli di guru che non avevano mai gestito un cliente vero.</p>
+        <p class="about-text">Lavoro con ristoratori, estetiste, medici, B&amp;B, furgoni, negozi locali. Gestisco i social, creo video, costruisco siti web e webapp su misura. Tutto quello che serve per farsi trovare online e trasformarlo in clienti reali.</p>
         <p class="about-text">Il mio approccio: analisi concreta, strategia su misura, risultati misurabili. Niente pacchetti standard, niente promesse impossibili.</p>
         <div class="about-values">
-          <div class="av-item">
-            <div class="av-icon">🎯</div>
-            <div class="av-label">Zero fuffa</div>
-            <div class="av-desc">Ti dico cosa funziona davvero, anche se non è quello che vuoi sentire.</div>
-          </div>
-          <div class="av-item">
-            <div class="av-icon">📊</div>
-            <div class="av-label">Dati alla mano</div>
-            <div class="av-desc">Ogni decisione strategica si basa su numeri reali, non su sensazioni.</div>
-          </div>
-          <div class="av-item">
-            <div class="av-icon">🤝</div>
-            <div class="av-label">Su misura</div>
-            <div class="av-desc">Non uso lo stesso piano per tutti. Il tuo settore è diverso dagli altri.</div>
-          </div>
-          <div class="av-item">
-            <div class="av-icon">🚀</div>
-            <div class="av-label">Risultati veloci</div>
-            <div class="av-desc">I primi miglioramenti si vedono nelle prime 2-4 settimane di lavoro.</div>
-          </div>
+          <div class="av-item"><div class="av-icon">&#127919;</div><div class="av-label">Zero fuffa</div><div class="av-desc">Ti dico cosa funziona davvero, anche se non &egrave; quello che vuoi sentire.</div></div>
+          <div class="av-item"><div class="av-icon">&#128202;</div><div class="av-label">Dati alla mano</div><div class="av-desc">Ogni decisione strategica si basa su numeri reali, non su sensazioni.</div></div>
+          <div class="av-item"><div class="av-icon">&#129309;</div><div class="av-label">Su misura</div><div class="av-desc">Non uso lo stesso piano per tutti. Il tuo settore &egrave; diverso dagli altri.</div></div>
+          <div class="av-item"><div class="av-icon">&#128640;</div><div class="av-label">Risultati veloci</div><div class="av-desc">I primi miglioramenti si vedono nelle prime 2-4 settimane di lavoro.</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- SERVIZI -->
-
 <section class="services" id="servizi">
   <div class="inner">
     <span class="eyebrow">Servizi 1:1</span>
     <h2>Lavoriamo<br><em>insieme</em></h2>
     <p class="sec-body">Per chi vuole risultati senza imparare tutto da solo. Mi occupo io o ti guido passo per passo.</p>
     <div class="sg">
-
-```
-  <div class="sc">
-    <div class="s-tag">Starter</div>
-    <div class="s-name"><em>Audit</em> del profilo</div>
-    <div class="s-desc">Analizzo ogni aspetto del tuo account e ti dico esattamente cosa non funziona, con piano d'azione immediato.</div>
-    <div class="s-inc">
-      <div class="s-i"><span class="s-ic">✦</span>Analisi bio, contenuti, metriche</div>
-      <div class="s-i"><span class="s-ic">✦</span>Analisi competitor nel tuo settore</div>
-      <div class="s-i"><span class="s-ic">✦</span>Report scritto dettagliato</div>
-      <div class="s-i"><span class="s-ic">✦</span>Piano d'azione con priorità</div>
-      <div class="s-i"><span class="s-ic">✦</span>Call di restituzione 45 min</div>
+      <div class="sc">
+        <div class="s-tag">Starter</div>
+        <div class="s-name"><em>Audit</em> del profilo</div>
+        <div class="s-desc">Analizzo ogni aspetto del tuo account e ti dico esattamente cosa non funziona, con piano d&rsquo;azione immediato.</div>
+        <div class="s-inc">
+          <div class="s-i"><span class="s-ic">&#10022;</span>Analisi bio, contenuti, metriche</div>
+          <div class="s-i"><span class="s-ic">&#10022;</span>Analisi competitor nel tuo settore</div>
+          <div class="s-i"><span class="s-ic">&#10022;</span>Report scritto dettagliato</div>
+          <div class="s-i"><span class="s-ic">&#10022;</span>Piano d&rsquo;azione con priorit&agrave;</div>
+          <div class="s-i"><span class="s-ic">&#10022;</span>Call di restituzione 45 min</div>
+        </div>
+        <a href="https://buy.stripe.com/3cIeV6gfB1nqgbydB67bW0a" class="price-block" target="_blank">
+          <div class="pb-top light"><span class="pb-price">&euro; 197</span><span class="pb-note">Pagamento unico &middot; Consegna 5 giorni</span></div>
+          <div class="pb-action">Inizia ora &rarr;</div>
+        </a>
+      </div>
+      <div class="sc feat">
+        <div class="s-pop">Pi&ugrave; richiesto</div>
+        <div class="s-tag">Gestione</div>
+        <div class="s-name"><em>Strategia</em> + Gestione mensile</div>
+        <div class="s-desc">Mi occupo di tutto. Strategia, contenuti, pubblicazione, community e report mensile con i numeri reali.</div>
+        <div class="s-inc">
+          <div class="s-i"><span class="s-ic">&#10022;</span>Audit iniziale completo</div>
+          <div class="s-i"><span class="s-ic">&#10022;</span>Piano editoriale mensile</div>
+          <div class="s-i"><span class="s-ic">&#10022;</span>Creazione contenuti (12-16 post)</div>
+          <div class="s-i"><span class="s-ic">&#10022;</span>Gestione DM e community</div>
+          <div class="s-i"><span class="s-ic">&#10022;</span>Report mensile con analisi</div>
+        </div>
+        <a href="https://calendly.com/chiaraawebdesigner/call-conoscitiva-gratuita" class="price-block" target="_blank">
+          <div class="pb-top dark"><span class="pb-price" style="font-size:22px">da &euro; 490 / mese</span><span class="pb-note">Contratto min. 3 mesi</span></div>
+          <div class="pb-action">Prenota call gratuita &rarr;</div>
+        </a>
+      </div>
+      <div class="sc">
+        <div class="s-tag">Consulenza</div>
+        <div class="s-name">Sessione <em>1:1</em> intensiva</div>
+        <div class="s-desc">2 ore per sbloccare il tuo profilo. Analizziamo tutto live e esci con un piano operativo per i prossimi 30 giorni.</div>
+        <div class="s-inc">
+          <div class="s-i"><span class="s-ic">&#10022;</span>2 ore via Zoom o Meet</div>
+          <div class="s-i"><span class="s-ic">&#10022;</span>Analisi live del profilo</div>
+          <div class="s-i"><span class="s-ic">&#10022;</span>Piano operativo 30 giorni</div>
+          <div class="s-i"><span class="s-ic">&#10022;</span>Registrazione della sessione</div>
+          <div class="s-i"><span class="s-ic">&#10022;</span>Follow-up via email 7 giorni</div>
+        </div>
+        <a href="https://buy.stripe.com/cNibIU9Rd1nqf7u40w7bW0b" class="price-block" target="_blank">
+          <div class="pb-top light"><span class="pb-price">&euro; 297</span><span class="pb-note">Pagamento unico &middot; Prenotazione immediata</span></div>
+          <div class="pb-action">Acquista ora &rarr;</div>
+        </a>
+      </div>
     </div>
-    <a href="https://buy.stripe.com/3cIeV6gfB1nqgbydB67bW0a" class="price-block" target="_blank">
-      <div class="pb-top light"><span class="pb-price">€ 197</span><span class="pb-note">Pagamento unico · Consegna 5 giorni</span></div>
-      <div class="pb-action">Inizia ora →</div>
-    </a>
-  </div>
-
-  <div class="sc feat">
-    <div class="s-pop">Più richiesto</div>
-    <div class="s-tag">Gestione</div>
-    <div class="s-name"><em>Strategia</em> + Gestione mensile</div>
-    <div class="s-desc">Mi occupo di tutto. Strategia, contenuti, pubblicazione, community e report mensile con i numeri reali.</div>
-    <div class="s-inc">
-      <div class="s-i"><span class="s-ic">✦</span>Audit iniziale completo</div>
-      <div class="s-i"><span class="s-ic">✦</span>Piano editoriale mensile</div>
-      <div class="s-i"><span class="s-ic">✦</span>Creazione contenuti (12-16 post)</div>
-      <div class="s-i"><span class="s-ic">✦</span>Gestione DM e community</div>
-      <div class="s-i"><span class="s-ic">✦</span>Report mensile con analisi</div>
-    </div>
-    <a href="https://calendly.com/chiaraawebdesigner/call-conoscitiva-gratuita" class="price-block" target="_blank">
-      <div class="pb-top dark"><span class="pb-price" style="font-size:22px">da € 490 / mese</span><span class="pb-note">Contratto min. 3 mesi</span></div>
-      <div class="pb-action">Prenota call gratuita →</div>
-    </a>
-  </div>
-
-  <div class="sc">
-    <div class="s-tag">Consulenza</div>
-    <div class="s-name">Sessione <em>1:1</em> intensiva</div>
-    <div class="s-desc">2 ore per sbloccare il tuo profilo. Analizziamo tutto live e esci con un piano operativo per i prossimi 30 giorni.</div>
-    <div class="s-inc">
-      <div class="s-i"><span class="s-ic">✦</span>2 ore via Zoom o Meet</div>
-      <div class="s-i"><span class="s-ic">✦</span>Analisi live del profilo</div>
-      <div class="s-i"><span class="s-ic">✦</span>Piano operativo 30 giorni</div>
-      <div class="s-i"><span class="s-ic">✦</span>Registrazione della sessione</div>
-      <div class="s-i"><span class="s-ic">✦</span>Follow-up via email 7 giorni</div>
-    </div>
-    <a href="https://buy.stripe.com/cNibIU9Rd1nqf7u40w7bW0b" class="price-block" target="_blank">
-      <div class="pb-top light"><span class="pb-price">€ 297</span><span class="pb-note">Pagamento unico · Prenotazione immediata</span></div>
-      <div class="pb-action">Acquista ora →</div>
-    </a>
-  </div>
-
-</div>
-```
-
   </div>
 </section>
-
-<!-- WEBAPP -->
-
 <section class="webapp" id="webapp">
   <div class="inner">
-    <span class="eyebrow" style="color:var(--fl)">WebApp & Siti web</span>
+    <span class="eyebrow" style="color:var(--fl)">WebApp &amp; Siti web</span>
     <h2 style="color:#fff">Il tuo sito.<br><em>Fatto bene.</em></h2>
-    <p class="sec-body">Siti web e webapp su misura per professionisti e piccole attività. Veloci, belli, ottimizzati per convertire.</p>
+    <p class="sec-body">Siti web e webapp su misura per professionisti e piccole attivit&agrave;. Veloci, belli, ottimizzati per convertire.</p>
     <div class="wg">
-
-```
-  <!-- WELCOME BOOK -->
-  <div class="wc">
-    <div class="w-emoji">🏠</div>
-    <div class="w-name"><em>Welcome Book</em> digitale</div>
-    <div class="w-desc">Per B&B e affitti brevi. I tuoi ospiti trovano tutto in un tap: regole, check-in, ristoranti, esperienze locali. È il prodotto più complesso che realizzo — ogni sezione è costruita su misura. Nessuna app da scaricare.</div>
-    <div class="w-inc">
-      <div class="w-i"><span class="w-ic">✦</span>Design personalizzato sul tuo brand</div>
-      <div class="w-i"><span class="w-ic">✦</span>Multilingua italiano / inglese</div>
-      <div class="w-i"><span class="w-ic">✦</span>Mobile-first, nessuna app</div>
-      <div class="w-i"><span class="w-ic">✦</span>Aggiornabile in autonomia</div>
+      <div class="wc">
+        <div class="w-emoji">&#127968;</div>
+        <div class="w-name"><em>Welcome Book</em> digitale</div>
+        <div class="w-desc">Per B&amp;B e affitti brevi. I tuoi ospiti trovano tutto in un tap: regole, check-in, ristoranti, esperienze locali. &Egrave; il prodotto pi&ugrave; complesso che realizzo &mdash; ogni sezione &egrave; costruita su misura. Nessuna app da scaricare.</div>
+        <div class="w-inc">
+          <div class="w-i"><span class="w-ic">&#10022;</span>Design personalizzato sul tuo brand</div>
+          <div class="w-i"><span class="w-ic">&#10022;</span>Multilingua italiano / inglese</div>
+          <div class="w-i"><span class="w-ic">&#10022;</span>Mobile-first, nessuna app</div>
+          <div class="w-i"><span class="w-ic">&#10022;</span>Aggiornabile in autonomia</div>
+        </div>
+        <a href="mailto:chiaraawebdesigner@gmail.com?subject=Preventivo%20Welcome%20Book%20Digitale&body=Ciao%20Chiara%2C%0A%0Avorrei%20ricevere%20un%20preventivo%20per%20il%20Welcome%20Book%20digitale.%0A%0A----%20COMPILA%20TUTTI%20I%20CAMPI%20(obbligatori)%20----%0A%0ANome%20e%20cognome%3A%20%5Bscrivere%20qui%5D%0A%0ANome%20della%20struttura%3A%20%5Bscrivere%20qui%5D%0A%0ATipo%20di%20struttura%20(B%26B%2C%20appartamento%2C%20villa%2C%20altro)%3A%20%5Bscrivere%20qui%5D%0A%0ACitt%C3%A0%20%2F%20zona%3A%20%5Bscrivere%20qui%5D%0A%0ANumero%20di%20camere%20%2F%20unit%C3%A0%3A%20%5Bscrivere%20qui%5D%0A%0ALingue%20necessarie%20(italiano%2C%20inglese%2C%20altro)%3A%20%5Bscrivere%20qui%5D%0A%0AHai%20gi%C3%A0%20un%20logo%20o%20brand%20visivo%3F%20(s%C3%AC%20%2F%20no)%3A%20%5Bscrivere%20qui%5D%0A%0ASezioni%20desiderate%20(es.%20check-in%2C%20regole%20casa%2C%20ristoranti%2C%20esperienze%2C%20trasporti%2C%20emergenze%2C%20altro)%3A%20%5Bscrivere%20qui%5D%0A%0ASito%20o%20social%20della%20struttura%20(se%20presente)%3A%20%5Bscrivere%20qui%5D%0A%0ATempistiche%20desiderate%3A%20%5Bscrivere%20qui%5D%0A%0AGrazie!" class="w-price-block">
+          <div class="wpb-top"><div class="wpb-price">da &euro; 450</div><div class="wpb-note">Pagamento unico &middot; Consegna in 10 giorni</div></div>
+          <div class="wpb-action">Richiedi il tuo &rarr;</div>
+        </a>
+      </div>
+      <div class="wc">
+        <div class="w-emoji">&#128105;&#8205;&#9877;&#65039;</div>
+        <div class="w-name">Sito per <em>professionisti</em></div>
+        <div class="w-desc">Per nutrizioniste, psicologhe, estetiste, medici. Un sito che presenta il tuo lavoro, raccoglie contatti e prenota appuntamenti.</div>
+        <div class="w-inc">
+          <div class="w-i"><span class="w-ic">&#10022;</span>Design elegante e professionale</div>
+          <div class="w-i"><span class="w-ic">&#10022;</span>Form di contatto e prenotazione</div>
+          <div class="w-i"><span class="w-ic">&#10022;</span>SEO base incluso</div>
+          <div class="w-i"><span class="w-ic">&#10022;</span>Ottimizzato per mobile</div>
+        </div>
+        <a href="mailto:chiaraawebdesigner@gmail.com?subject=Preventivo%20Sito%20per%20Professionisti&body=Ciao%20Chiara%2C%0A%0Avorrei%20ricevere%20un%20preventivo%20per%20un%20sito%20professionale.%0A%0A----%20COMPILA%20TUTTI%20I%20CAMPI%20(obbligatori)%20----%0A%0ANome%20e%20cognome%3A%20%5Bscrivere%20qui%5D%0A%0AProfessione%20%2F%20specializzazione%3A%20%5Bscrivere%20qui%5D%0A%0ADescrivi%20brevemente%20la%20tua%20attivit%C3%A0%3A%20%5Bscrivere%20qui%5D%0A%0AA%20chi%20ti%20rivolgi%20(target%20ideale)%3A%20%5Bscrivere%20qui%5D%0A%0ACitt%C3%A0%20%2F%20zona%20in%20cui%20operi%3A%20%5Bscrivere%20qui%5D%0A%0AHai%20gi%C3%A0%20un%20sito%3F%20(s%C3%AC%20%2F%20no%20%2F%20link%20se%20presente)%3A%20%5Bscrivere%20qui%5D%0A%0AHai%20un%20logo%20o%20brand%20visivo%3F%20(s%C3%AC%20%2F%20no)%3A%20%5Bscrivere%20qui%5D%0A%0APagine%20desiderate%20(es.%20chi%20sono%2C%20servizi%2C%20prezzi%2C%20contatti%2C%20blog%2C%20altro)%3A%20%5Bscrivere%20qui%5D%0A%0AVuoi%20un%20form%20di%20prenotazione%20appuntamenti%3F%20(s%C3%AC%20%2F%20no)%3A%20%5Bscrivere%20qui%5D%0A%0AProfili%20social%20(se%20presenti)%3A%20%5Bscrivere%20qui%5D%0A%0ATempistiche%20desiderate%3A%20%5Bscrivere%20qui%5D%0A%0AGrazie!" class="w-price-block">
+          <div class="wpb-top"><div class="wpb-price">da &euro; 500</div><div class="wpb-note">Preventivo su progetto &middot; Call gratuita</div></div>
+          <div class="wpb-action">Parliamone &rarr;</div>
+        </a>
+      </div>
+      <div class="wc">
+        <div class="w-emoji">&#127829;</div>
+        <div class="w-name">Sito per <em>attivit&agrave; locali</em></div>
+        <div class="w-desc">Ristoranti, negozi, centri estetici. Un sito che ti fa trovare su Google, mostra quello che fai e porta gente dentro.</div>
+        <div class="w-inc">
+          <div class="w-i"><span class="w-ic">&#10022;</span>Google My Business incluso</div>
+          <div class="w-i"><span class="w-ic">&#10022;</span>Menu o catalogo digitale</div>
+          <div class="w-i"><span class="w-ic">&#10022;</span>Integrazione social e mappe</div>
+          <div class="w-i"><span class="w-ic">&#10022;</span>Gestione autonoma contenuti</div>
+        </div>
+        <a href="mailto:chiaraawebdesigner@gmail.com?subject=Preventivo%20Sito%20Attivit%C3%A0%20Locale&body=Ciao%20Chiara%2C%0A%0Avorrei%20ricevere%20un%20preventivo%20per%20un%20sito%20per%20la%20mia%20attivit%C3%A0.%0A%0A----%20COMPILA%20TUTTI%20I%20CAMPI%20(obbligatori)%20----%0A%0ANome%20e%20cognome%3A%20%5Bscrivere%20qui%5D%0A%0ANome%20dell%27attivit%C3%A0%3A%20%5Bscrivere%20qui%5D%0A%0ATipo%20di%20attivit%C3%A0%20(ristorante%2C%20negozio%2C%20centro%20estetico%2C%20altro)%3A%20%5Bscrivere%20qui%5D%0A%0ADescrivi%20brevemente%20cosa%20fai%3A%20%5Bscrivere%20qui%5D%0A%0AIndirizzo%20%2F%20citt%C3%A0%3A%20%5Bscrivere%20qui%5D%0A%0AHai%20gi%C3%A0%20un%20sito%3F%20(s%C3%AC%20%2F%20no%20%2F%20link%20se%20presente)%3A%20%5Bscrivere%20qui%5D%0A%0AHai%20un%20logo%20o%20brand%20visivo%3F%20(s%C3%AC%20%2F%20no)%3A%20%5Bscrivere%20qui%5D%0A%0AHai%20gi%C3%A0%20una%20scheda%20Google%20My%20Business%3F%20(s%C3%AC%20%2F%20no)%3A%20%5Bscrivere%20qui%5D%0A%0ACosa%20vorresti%20mostrare%20(es.%20men%C3%B9%2C%20catalogo%2C%20galleria%2C%20orari%2C%20prenotazioni%2C%20altro)%3A%20%5Bscrivere%20qui%5D%0A%0AProfili%20social%20(se%20presenti)%3A%20%5Bscrivere%20qui%5D%0A%0ATempistiche%20desiderate%3A%20%5Bscrivere%20qui%5D%0A%0AGrazie!" class="w-price-block">
+          <div class="wpb-top"><div class="wpb-price" style="font-size:16px;font-family:'Jost',sans-serif;font-weight:500">Preventivo gratuito</div><div class="wpb-note">Ogni progetto &egrave; diverso &mdash; parliamone prima</div></div>
+          <div class="wpb-action">Richiedi il preventivo &rarr;</div>
+        </a>
+      </div>
     </div>
-    <a href="mailto:chiaraawebdesigner@gmail.com?subject=Preventivo%20Welcome%20Book%20Digitale&body=Ciao%20Chiara%2C%0A%0Avorrei%20ricevere%20un%20preventivo%20per%20il%20Welcome%20Book%20digitale.%0A%0A----%20COMPILA%20TUTTI%20I%20CAMPI%20(obbligatori)%20----%0A%0ANome%20e%20cognome%3A%20%5Bscrivere%20qui%5D%0A%0ANome%20della%20struttura%3A%20%5Bscrivere%20qui%5D%0A%0ATipo%20di%20struttura%20(B%26B%2C%20appartamento%2C%20villa%2C%20altro)%3A%20%5Bscrivere%20qui%5D%0A%0ACitt%C3%A0%20%2F%20zona%3A%20%5Bscrivere%20qui%5D%0A%0ANumero%20di%20camere%20%2F%20unit%C3%A0%3A%20%5Bscrivere%20qui%5D%0A%0ALinque%20necessarie%20(italiano%2C%20inglese%2C%20altro)%3A%20%5Bscrivere%20qui%5D%0A%0AHai%20gi%C3%A0%20un%20logo%20o%20brand%20visivo%3F%20(s%C3%AC%20%2F%20no)%3A%20%5Bscrivere%20qui%5D%0A%0ASezioni%20che%20vorresti%20includere%20(es.%20check-in%2C%20regole%20casa%2C%20ristoranti%2C%20esperienze%2C%20trasporti%2C%20emergenze%2C%20altro)%3A%20%5Bscrivere%20qui%5D%0A%0ASito%20web%20o%20profilo%20social%20della%20struttura%20(se%20presente)%3A%20%5Bscrivere%20qui%5D%0A%0ATempistiche%20desiderate%3A%20%5Bscrivere%20qui%5D%0A%0AGrazie!" class="w-price-block">
-      <div class="wpb-top"><div class="wpb-price">da € 450</div><div class="wpb-note">Pagamento unico · Consegna in 10 giorni</div></div>
-      <div class="wpb-action">Richiedi il tuo →</div>
-    </a>
-  </div>
-
-  <!-- SITO PROFESSIONISTI -->
-  <div class="wc">
-    <div class="w-emoji">👩‍⚕️</div>
-    <div class="w-name">Sito per <em>professionisti</em></div>
-    <div class="w-desc">Per nutrizioniste, psicologhe, estetiste, medici. Un sito che presenta il tuo lavoro, raccoglie contatti e prenota appuntamenti.</div>
-    <div class="w-inc">
-      <div class="w-i"><span class="w-ic">✦</span>Design elegante e professionale</div>
-      <div class="w-i"><span class="w-ic">✦</span>Form di contatto e prenotazione</div>
-      <div class="w-i"><span class="w-ic">✦</span>SEO base incluso</div>
-      <div class="w-i"><span class="w-ic">✦</span>Ottimizzato per mobile</div>
-    </div>
-    <a href="mailto:chiaraawebdesigner@gmail.com?subject=Preventivo%20Sito%20per%20Professionisti&body=Ciao%20Chiara%2C%0A%0Avorrei%20ricevere%20un%20preventivo%20per%20un%20sito%20professionale.%0A%0A----%20COMPILA%20TUTTI%20I%20CAMPI%20(obbligatori)%20----%0A%0ANome%20e%20cognome%3A%20%5Bscrivere%20qui%5D%0A%0AProfessione%20%2F%20specializzazione%3A%20%5Bscrivere%20qui%5D%0A%0ADescrivi%20brevemente%20la%20tua%20attivit%C3%A0%3A%20%5Bscrivere%20qui%5D%0A%0AA%20chi%20ti%20rivolgi%20(target%20ideale)%3A%20%5Bscrivere%20qui%5D%0A%0ACitt%C3%A0%20%2F%20zona%20in%20cui%20operi%3A%20%5Bscrivere%20qui%5D%0A%0AHai%20gi%C3%A0%20un%20sito%3F%20(s%C3%AC%20%2F%20no%20%2F%20incolla%20il%20link%20se%20presente)%3A%20%5Bscrivere%20qui%5D%0A%0AHai%20un%20logo%20o%20brand%20visivo%3F%20(s%C3%AC%20%2F%20no)%3A%20%5Bscrivere%20qui%5D%0A%0APagine%20che%20vorresti%20(es.%20chi%20sono%2C%20servizi%2C%20prezzi%2C%20contatti%2C%20blog%2C%20altro)%3A%20%5Bscrivere%20qui%5D%0A%0AVuoi%20un%20form%20di%20prenotazione%20appuntamenti%3F%20(s%C3%AC%20%2F%20no)%3A%20%5Bscrivere%20qui%5D%0A%0AProfili%20social%20(se%20presenti)%3A%20%5Bscrivere%20qui%5D%0A%0ATempistiche%20desiderate%3A%20%5Bscrivere%20qui%5D%0A%0AGrazie!" class="w-price-block">
-      <div class="wpb-top"><div class="wpb-price">da € 500</div><div class="wpb-note">Preventivo su progetto · Call gratuita</div></div>
-      <div class="wpb-action">Parliamone →</div>
-    </a>
-  </div>
-
-  <!-- SITO ATTIVITÀ LOCALI -->
-  <div class="wc">
-    <div class="w-emoji">🍕</div>
-    <div class="w-name">Sito per <em>attività locali</em></div>
-    <div class="w-desc">Ristoranti, negozi, centri estetici. Un sito che ti fa trovare su Google, mostra quello che fai e porta gente dentro.</div>
-    <div class="w-inc">
-      <div class="w-i"><span class="w-ic">✦</span>Google My Business incluso</div>
-      <div class="w-i"><span class="w-ic">✦</span>Menu o catalogo digitale</div>
-      <div class="w-i"><span class="w-ic">✦</span>Integrazione social e mappe</div>
-      <div class="w-i"><span class="w-ic">✦</span>Gestione autonoma contenuti</div>
-    </div>
-    <a href="mailto:chiaraawebdesigner@gmail.com?subject=Preventivo%20Sito%20Attivit%C3%A0%20Locale&body=Ciao%20Chiara%2C%0A%0Avorrei%20ricevere%20un%20preventivo%20per%20un%20sito%20per%20la%20mia%20attivit%C3%A0.%0A%0A----%20COMPILA%20TUTTI%20I%20CAMPI%20(obbligatori)%20----%0A%0ANome%20e%20cognome%3A%20%5Bscrivere%20qui%5D%0A%0ANome%20dell%27attivit%C3%A0%3A%20%5Bscrivere%20qui%5D%0A%0ATipo%20di%20attivit%C3%A0%20(ristorante%2C%20negozio%2C%20centro%20estetico%2C%20altro)%3A%20%5Bscrivere%20qui%5D%0A%0ADescrivi%20brevemente%20cosa%20fai%3A%20%5Bscrivere%20qui%5D%0A%0AIndirizzo%20%2F%20citt%C3%A0%3A%20%5Bscrivere%20qui%5D%0A%0AHai%20gi%C3%A0%20un%20sito%3F%20(s%C3%AC%20%2F%20no%20%2F%20incolla%20il%20link%20se%20presente)%3A%20%5Bscrivere%20qui%5D%0A%0AHai%20un%20logo%20o%20brand%20visivo%3F%20(s%C3%AC%20%2F%20no)%3A%20%5Bscrivere%20qui%5D%0A%0AHai%20gi%C3%A0%20una%20scheda%20Google%20My%20Business%3F%20(s%C3%AC%20%2F%20no)%3A%20%5Bscrivere%20qui%5D%0A%0ACosa%20vorresti%20mostrare%20sul%20sito%20(es.%20men%C3%B9%2C%20catalogo%2C%20galleria%20foto%2C%20orari%2C%20prenotazioni%2C%20altro)%3A%20%5Bscrivere%20qui%5D%0A%0AProfili%20social%20(se%20presenti)%3A%20%5Bscrivere%20qui%5D%0A%0ATempistiche%20desiderate%3A%20%5Bscrivere%20qui%5D%0A%0AGrazie!" class="w-price-block">
-      <div class="wpb-top"><div class="wpb-price" style="font-size:16px;font-family:'Jost',sans-serif;font-weight:500">Preventivo gratuito</div><div class="wpb-note">Ogni progetto è diverso — parliamone prima</div></div>
-      <div class="wpb-action">Richiedi il preventivo →</div>
-    </a>
-  </div>
-
-</div>
-```
-
   </div>
 </section>
-
-<!-- DIGITALI -->
-
 <section class="digitali" id="digitali">
   <div class="inner">
     <span class="eyebrow">Prodotti digitali</span>
@@ -494,175 +406,129 @@ footer{padding:28px 20px}
     <p class="sec-body">Guide pratiche e toolkit che uso ogni giorno. Compra una volta, usi per sempre.</p>
     <div class="dg">
       <div class="dc">
-        <div class="d-emoji">🎬</div>
+        <div class="d-emoji">&#127916;</div>
         <div class="d-name">Guida <em>CapCut</em></div>
         <div class="d-desc">Da zero a Reel professionali. Tutto quello che devi sapere per montare video che fermano il pollice.</div>
         <a href="https://buy.stripe.com/9B6fZa5AXgik1gEbsY7bW07" class="d-price-block" target="_blank">
-          <div class="dpb-top"><span class="dpb-price">€ 27</span><span class="dpb-action">Acquista</span></div>
-          <div class="dpb-bottom">Ricevi subito via email →</div>
+          <div class="dpb-top"><span class="dpb-price">&euro; 27</span><span class="dpb-action">Acquista</span></div>
+          <div class="dpb-bottom">Ricevi subito via email &rarr;</div>
         </a>
       </div>
       <div class="dc">
-        <div class="d-emoji">🤖</div>
+        <div class="d-emoji">&#129302;</div>
         <div class="d-name"><em>AI</em> Toolkit</div>
-        <div class="d-desc">I tool AI che uso ogni giorno per creare contenuti in metà tempo. Prompt pronti, workflow testati.</div>
+        <div class="d-desc">I tool AI che uso ogni giorno per creare contenuti in met&agrave; tempo. Prompt pronti, workflow testati.</div>
         <a href="https://buy.stripe.com/aFa28kd3p7LO7F2dB67bW08" class="d-price-block" target="_blank">
-          <div class="dpb-top"><span class="dpb-price">€ 37</span><span class="dpb-action">Acquista</span></div>
-          <div class="dpb-bottom">Ricevi subito via email →</div>
+          <div class="dpb-top"><span class="dpb-price">&euro; 37</span><span class="dpb-action">Acquista</span></div>
+          <div class="dpb-bottom">Ricevi subito via email &rarr;</div>
         </a>
       </div>
       <div class="dc">
-        <div class="d-emoji">🎨</div>
+        <div class="d-emoji">&#127912;</div>
         <div class="d-name">Template <em>grafici</em></div>
         <div class="d-desc">Pack Canva per Reel cover, carousel, Stories e highlights. Personalizzabili in 5 minuti.</div>
         <a href="https://buy.stripe.com/28EfZagfB1nq7F2fJe7bW02" class="d-price-block" target="_blank">
-          <div class="dpb-top"><span class="dpb-price">€ 47</span><span class="dpb-action">Acquista</span></div>
-          <div class="dpb-bottom">Ricevi subito via email →</div>
+          <div class="dpb-top"><span class="dpb-price">&euro; 47</span><span class="dpb-action">Acquista</span></div>
+          <div class="dpb-bottom">Ricevi subito via email &rarr;</div>
         </a>
       </div>
       <div class="dc bundle">
-        <div class="d-emoji">📦</div>
+        <div class="d-emoji">&#128230;</div>
         <div class="d-name">Bundle <em>completo</em></div>
-        <div class="d-desc">Tutti e 3 insieme con sconto. La scelta più smart se vuoi partire subito con tutto.</div>
+        <div class="d-desc">Tutti e 3 insieme con sconto. La scelta pi&ugrave; smart se vuoi partire subito con tutto.</div>
         <a href="https://buy.stripe.com/4gM3cod3peac3oM7cI7bW09" class="d-price-block" target="_blank">
-          <div class="dpb-top" style="background:#7c1542"><span class="dpb-price"><span style="text-decoration:line-through;opacity:.5;font-size:16px">€111</span> € 79</span><span class="dpb-action">Acquista</span></div>
-          <div class="dpb-bottom" style="background:var(--f)">Ricevi subito via email →</div>
+          <div class="dpb-top" style="background:#7c1542"><span class="dpb-price"><span style="text-decoration:line-through;opacity:.5;font-size:16px">&euro;111</span> &euro; 79</span><span class="dpb-action">Acquista</span></div>
+          <div class="dpb-bottom" style="background:var(--f)">Ricevi subito via email &rarr;</div>
         </a>
       </div>
     </div>
   </div>
 </section>
-
-<!-- TESTIMONIANZE -->
-
 <section class="testi" id="recensioni">
   <div class="inner">
     <span class="eyebrow" style="color:var(--fl)">Testimonianze</span>
     <h2>Cosa dicono<br>i miei <em>clienti</em></h2>
     <div class="tg">
-
-```
-  <div class="tc">
-    <div class="t-quote">"</div>
-    <div class="t-text">Riceviamo chiamate per prenotazioni anche nelle settimane in cui non pubblichiamo niente. Il profilo lavora da solo — non pensavo fosse possibile.</div>
-    <div class="t-author">
-      <div class="t-av">🏠</div>
-      <div>
-        <div class="t-name">Gestione B&B</div>
-        <div class="t-role">Profilo social · Welcome book · Video · Roma</div>
+      <div class="tc">
+        <div class="t-quote">&ldquo;</div>
+        <div class="t-text">Riceviamo chiamate per prenotazioni anche nelle settimane in cui non pubblichiamo niente. Il profilo lavora da solo &mdash; non pensavo fosse possibile.</div>
+        <div class="t-author">
+          <div class="t-av">&#127968;</div>
+          <div><div class="t-name">Gestione B&amp;B</div><div class="t-role">Profilo social &middot; Welcome book &middot; Video &middot; Roma</div></div>
+        </div>
+        <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+          <span style="background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.2);border-radius:20px;padding:3px 10px;font-size:9px;color:var(--fl);letter-spacing:1px">Social</span>
+          <span style="background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.2);border-radius:20px;padding:3px 10px;font-size:9px;color:var(--fl);letter-spacing:1px">Video</span>
+          <span style="background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.2);border-radius:20px;padding:3px 10px;font-size:9px;color:var(--fl);letter-spacing:1px">Welcome Book</span>
+        </div>
+      </div>
+      <div class="tc">
+        <div class="t-quote">&ldquo;</div>
+        <div class="t-text">Il furgone &egrave; quasi sempre fuori &mdash; raramente disponibile. Non era mai successo prima. I video hanno fatto conoscere il servizio in tutta la zona.</div>
+        <div class="t-author">
+          <div class="t-av">&#128656;</div>
+          <div><div class="t-name">Furgone &middot; Servizio mobile</div><div class="t-role">Profilo social &middot; Video &middot; Roma</div></div>
+        </div>
+        <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+          <span style="background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.2);border-radius:20px;padding:3px 10px;font-size:9px;color:var(--fl);letter-spacing:1px">Social</span>
+          <span style="background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.2);border-radius:20px;padding:3px 10px;font-size:9px;color:var(--fl);letter-spacing:1px">Video</span>
+        </div>
+      </div>
+      <div class="tc">
+        <div class="t-quote">&ldquo;</div>
+        <div class="t-text">Abbiamo creato dei video corsi e da quando sono usciti vendo molto di pi&ugrave;. Non solo clienti in studio &mdash; ora vendo anche online. &Egrave; stato un cambio di marcia vero.</div>
+        <div class="t-author">
+          <div class="t-av">&#10024;</div>
+          <div><div class="t-name">Lash &amp; Brow Maker</div><div class="t-role">Profilo social &middot; Video &middot; WebApp &middot; Corsi online</div></div>
+        </div>
+        <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+          <span style="background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.2);border-radius:20px;padding:3px 10px;font-size:9px;color:var(--fl);letter-spacing:1px">WebApp</span>
+        </div>
       </div>
     </div>
-    <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
-      <span style="background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.2);border-radius:20px;padding:3px 10px;font-size:9px;color:var(--fl);letter-spacing:1px">Social</span>
-      <span style="background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.2);border-radius:20px;padding:3px 10px;font-size:9px;color:var(--fl);letter-spacing:1px">Video</span>
-      <span style="background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.2);border-radius:20px;padding:3px 10px;font-size:9px;color:var(--fl);letter-spacing:1px">Welcome Book</span>
-    </div>
-  </div>
-
-  <div class="tc">
-    <div class="t-quote">"</div>
-    <div class="t-text">Il furgone è quasi sempre fuori — raramente disponibile. Non era mai successo prima. I video hanno fatto conoscere il servizio in tutta la zona.</div>
-    <div class="t-author">
-      <div class="t-av">🚐</div>
-      <div>
-        <div class="t-name">Furgone · Servizio mobile</div>
-        <div class="t-role">Profilo social · Video · Roma</div>
-      </div>
-    </div>
-    <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
-      <span style="background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.2);border-radius:20px;padding:3px 10px;font-size:9px;color:var(--fl);letter-spacing:1px">Social</span>
-      <span style="background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.2);border-radius:20px;padding:3px 10px;font-size:9px;color:var(--fl);letter-spacing:1px">Video</span>
-    </div>
-  </div>
-
-  <div class="tc">
-    <div class="t-quote">"</div>
-    <div class="t-text">Abbiamo creato dei video corsi e da quando sono usciti vendo molto di più. Non solo clienti in studio — ora vendo anche online. È stato un cambio di marcia vero.</div>
-    <div class="t-author">
-      <div class="t-av">✨</div>
-      <div>
-        <div class="t-name">Lash & Brow Maker</div>
-        <div class="t-role">Profilo social · Video · WebApp · Corsi online</div>
-      </div>
-    </div>
-    <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
-      <span style="background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.2);border-radius:20px;padding:3px 10px;font-size:9px;color:var(--fl);letter-spacing:1px">WebApp</span>
-    </div>
-  </div>
-
-</div>
-```
-
   </div>
 </section>
-
-<!-- CTA -->
-
 <section class="cta-s">
   <span class="eyebrow">Inizia oggi</span>
-  <div class="cta-urgency">📅 Accetto massimo 3 nuovi clienti al mese</div>
+  <div class="cta-urgency">&#128197; Accetto massimo 3 nuovi clienti al mese</div>
   <h2 class="cta-title">Prenota la tua<br><em>call gratuita</em></h2>
   <p class="cta-body">30 minuti. Ti dico esattamente cosa non funziona nel tuo profilo e cosa fare subito per cambiarlo. Senza impegno.</p>
-  <a href="https://calendly.com/chiaraawebdesigner/call-conoscitiva-gratuita" class="cta-btn" target="_blank">🎯 Prenota ora — è gratis</a>
-  <p class="cta-alt">Oppure scrivi <a href="https://instagram.com/lasmmsenzafiltri" target="_blank">ANALISI in DM su Instagram →</a></p>
+  <a href="https://calendly.com/chiaraawebdesigner/call-conoscitiva-gratuita" class="cta-btn" target="_blank">&#127919; Prenota ora &mdash; &egrave; gratis</a>
+  <p class="cta-alt">Oppure scrivi <a href="https://instagram.com/lasmmsenzafiltri" target="_blank">ANALISI in DM su Instagram &rarr;</a></p>
 </section>
-
-<!-- PRIVACY POLICY MODAL -->
-
 <div id="privacy-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:999;overflow-y:auto;padding:40px 20px">
   <div style="background:#fff;border-radius:20px;max-width:680px;margin:0 auto;padding:40px;position:relative">
-    <button onclick="document.getElementById('privacy-modal').style.display='none'" style="position:absolute;top:20px;right:20px;background:none;border:none;font-size:20px;cursor:pointer;color:#999">✕</button>
+    <button onclick="document.getElementById('privacy-modal').style.display='none'" style="position:absolute;top:20px;right:20px;background:none;border:none;font-size:20px;cursor:pointer;color:#999">&#10005;</button>
     <h2 style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:#1C0A0A;margin-bottom:24px">Privacy Policy</h2>
-
-```
-<p style="font-size:12px;color:#9A6060;margin-bottom:24px">Ultimo aggiornamento: aprile 2026</p>
-
-<div style="font-size:13px;font-weight:300;line-height:1.8;color:#4A2020">
-
-  <p style="font-weight:500;color:#1C0A0A;margin-bottom:6px">Titolare del Trattamento</p>
-  <p style="margin-bottom:20px">La SMM Senza Filtri — P.IVA 18147451001<br>Email: chiaraawebdesigner@gmail.com<br>Instagram: @lasmmsenzafiltri</p>
-
-  <p style="font-weight:500;color:#1C0A0A;margin-bottom:6px">Dati raccolti</p>
-  <p style="margin-bottom:20px">Raccogliamo esclusivamente i dati che fornisci volontariamente tramite i nostri form (nome e indirizzo email) per rispondere alle tue richieste di contatto o preventivo e per la gestione degli ordini dei prodotti digitali.</p>
-
-  <p style="font-weight:500;color:#1C0A0A;margin-bottom:6px">Finalità del trattamento</p>
-  <p style="margin-bottom:20px">I tuoi dati vengono utilizzati per: risposta a richieste di contatto e preventivi, gestione degli acquisti di prodotti digitali e servizi, gestione del rapporto di collaborazione.</p>
-
-  <p style="font-weight:500;color:#1C0A0A;margin-bottom:6px">Base giuridica</p>
-  <p style="margin-bottom:20px">Il trattamento si basa sul tuo consenso esplicito (art. 6, par. 1, lett. a GDPR), che puoi revocare in qualsiasi momento scrivendo a chiaraawebdesigner@gmail.com.</p>
-
-  <p style="font-weight:500;color:#1C0A0A;margin-bottom:6px">Pagamenti</p>
-  <p style="margin-bottom:20px">I pagamenti vengono gestiti tramite Stripe Inc. La SMM Senza Filtri non raccoglie né conserva i dati delle carte di credito. Per la privacy policy di Stripe: stripe.com/it/privacy.</p>
-
-  <p style="font-weight:500;color:#1C0A0A;margin-bottom:6px">Conservazione dei dati</p>
-  <p style="margin-bottom:20px">I dati vengono conservati per il tempo strettamente necessario alle finalità per cui sono stati raccolti, e comunque non oltre 2 anni dall'ultimo contatto o dalla cessazione del rapporto contrattuale.</p>
-
-  <p style="font-weight:500;color:#1C0A0A;margin-bottom:6px">I tuoi diritti</p>
-  <p style="margin-bottom:20px">Hai diritto di accedere, rettificare, cancellare i tuoi dati, opporti al trattamento e richiedere la portabilità. Scrivi a chiaraawebdesigner@gmail.com per esercitare i tuoi diritti. Hai anche il diritto di proporre reclamo all'autorità di controllo (Garante Privacy — gpdp.it).</p>
-
-  <p style="font-weight:500;color:#1C0A0A;margin-bottom:6px">Cookie</p>
-  <p>Questo sito non utilizza cookie di profilazione o di terze parti a fini pubblicitari. Vengono utilizzati esclusivamente cookie tecnici necessari al funzionamento del sito.</p>
-</div>
-```
-
+    <p style="font-size:12px;color:#9A6060;margin-bottom:24px">Ultimo aggiornamento: aprile 2026</p>
+    <div style="font-size:13px;font-weight:300;line-height:1.8;color:#4A2020">
+      <p style="font-weight:500;color:#1C0A0A;margin-bottom:6px">Titolare del Trattamento</p>
+      <p style="margin-bottom:20px">La SMM Senza Filtri &mdash; P.IVA 18147451001<br>Email: chiaraawebdesigner@gmail.com<br>Instagram: @lasmmsenzafiltri</p>
+      <p style="font-weight:500;color:#1C0A0A;margin-bottom:6px">Dati raccolti</p>
+      <p style="margin-bottom:20px">Raccogliamo esclusivamente i dati che fornisci volontariamente tramite i nostri form (nome e indirizzo email) per rispondere alle tue richieste di contatto o preventivo e per la gestione degli ordini dei prodotti digitali.</p>
+      <p style="font-weight:500;color:#1C0A0A;margin-bottom:6px">Finalit&agrave; del trattamento</p>
+      <p style="margin-bottom:20px">I tuoi dati vengono utilizzati per: risposta a richieste di contatto e preventivi, gestione degli acquisti di prodotti digitali e servizi, gestione del rapporto di collaborazione.</p>
+      <p style="font-weight:500;color:#1C0A0A;margin-bottom:6px">Base giuridica</p>
+      <p style="margin-bottom:20px">Il trattamento si basa sul tuo consenso esplicito (art. 6, par. 1, lett. a GDPR), che puoi revocare in qualsiasi momento scrivendo a chiaraawebdesigner@gmail.com.</p>
+      <p style="font-weight:500;color:#1C0A0A;margin-bottom:6px">Pagamenti</p>
+      <p style="margin-bottom:20px">I pagamenti vengono gestiti tramite Stripe Inc. La SMM Senza Filtri non raccoglie n&eacute; conserva i dati delle carte di credito. Per la privacy policy di Stripe: stripe.com/it/privacy.</p>
+      <p style="font-weight:500;color:#1C0A0A;margin-bottom:6px">Conservazione dei dati</p>
+      <p style="margin-bottom:20px">I dati vengono conservati per il tempo strettamente necessario alle finalit&agrave; per cui sono stati raccolti, e comunque non oltre 2 anni dall&rsquo;ultimo contatto o dalla cessazione del rapporto contrattuale.</p>
+      <p style="font-weight:500;color:#1C0A0A;margin-bottom:6px">I tuoi diritti</p>
+      <p style="margin-bottom:20px">Hai diritto di accedere, rettificare, cancellare i tuoi dati, opporti al trattamento e richiedere la portabilit&agrave;. Scrivi a chiaraawebdesigner@gmail.com per esercitare i tuoi diritti. Hai anche il diritto di proporre reclamo all&rsquo;autorit&agrave; di controllo (Garante Privacy &mdash; gpdp.it).</p>
+      <p style="font-weight:500;color:#1C0A0A;margin-bottom:6px">Cookie</p>
+      <p>Questo sito non utilizza cookie di profilazione o di terze parti a fini pubblicitari. Vengono utilizzati esclusivamente cookie tecnici necessari al funzionamento del sito.</p>
+    </div>
   </div>
 </div>
-
-<!-- FOOTER -->
-
 <footer>
   <p style="margin-bottom:8px">
-    <a href="https://instagram.com/lasmmsenzafiltri" target="_blank">@lasmmsenzafiltri</a> &nbsp;·&nbsp;
-    <a href="https://tiktok.com/@lasmmsenzafiltri" target="_blank">TikTok</a> &nbsp;·&nbsp;
+    <a href="https://instagram.com/lasmmsenzafiltri" target="_blank">@lasmmsenzafiltri</a> &nbsp;&middot;&nbsp;
+    <a href="https://tiktok.com/@lasmmsenzafiltri" target="_blank">TikTok</a> &nbsp;&middot;&nbsp;
     <a href="mailto:chiaraawebdesigner@gmail.com">chiaraawebdesigner@gmail.com</a>
   </p>
-  <p style="margin-bottom:8px">
-    © 2026 La SMM Senza Filtri &nbsp;·&nbsp; P.IVA 18147451001
-  </p>
-  <p>
-    <a href="#" onclick="document.getElementById('privacy-modal').style.display='block';return false;" style="color:rgba(255,255,255,.5);border-bottom:1px solid rgba(255,255,255,.2)">Privacy Policy</a>
-  </p>
+  <p style="margin-bottom:8px">&copy; 2026 La SMM Senza Filtri &nbsp;&middot;&nbsp; P.IVA 18147451001</p>
+  <p><a href="#" onclick="document.getElementById('privacy-modal').style.display='block';return false;" style="color:rgba(255,255,255,.5);border-bottom:1px solid rgba(255,255,255,.2)">Privacy Policy</a></p>
 </footer>
-
 </body>
 </html>
