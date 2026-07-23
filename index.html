@@ -140,6 +140,10 @@ em.corsivo{font-family:var(--serif);font-style:italic;font-weight:600;letter-spa
 .field input{width:100%;font-family:var(--display);font-size:1rem;color:var(--bordeaux);background:var(--panna);border:2px solid var(--bordeaux);border-radius:0;padding:.85em .9em;}
 .field input::placeholder{color:rgba(28,0,16,.4);}
 .field input:focus{outline:3px solid var(--fucsia);outline-offset:1px;}
+.consent{display:flex;gap:.7rem;align-items:flex-start;margin:.2rem 0 1.1rem;cursor:pointer;font-size:.82rem;line-height:1.45;color:rgba(255,246,232,.8);}
+.consent input{width:20px;height:20px;flex:0 0 auto;margin-top:2px;accent-color:var(--fucsia);cursor:pointer;}
+.consent a{color:var(--butter);}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;width:0;}
 .counter .btn{width:100%;text-align:center;margin-top:.4rem;background:var(--fucsia);color:var(--butter);border-color:var(--fucsia);}
 .counter .btn:hover{background:var(--butter);color:var(--bordeaux);border-color:var(--butter);}
 .deadline{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,246,232,.5);margin:1rem 0 0;text-align:center;}
@@ -202,6 +206,26 @@ em.corsivo{font-family:var(--serif);font-style:italic;font-weight:600;letter-spa
 .extra a{font-weight:700;}
 
 /* ============================================================
+   LISTINO SERVIZI SINGOLI
+   ============================================================ */
+.listino{background:var(--rosa);padding:clamp(3.5rem,7vw,5.5rem) 0;border-top:2px solid var(--bordeaux);}
+.listino .eyebrow{color:var(--fucsia);}
+.listino h2{max-width:18ch;}
+.listino-lead{max-width:50ch;margin:1.3rem 0 3rem;}
+.listino-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,3vw,2.6rem);}
+.lst{background:var(--panna);border:2px solid var(--bordeaux);padding:1.8rem 1.6rem;display:flex;flex-direction:column;}
+.lst .tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--fucsia);margin-bottom:.9rem;}
+.lst h3{margin-bottom:.5rem;}
+.lst>p{font-size:.92rem;margin:0 0 1.5rem;}
+.rows{list-style:none;margin:0 0 1.6rem;padding:0;}
+.rows li{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.75rem 0;border-bottom:1px dotted rgba(28,0,16,.3);font-size:.95rem;}
+.rows li:first-child{border-top:1px dotted rgba(28,0,16,.3);}
+.rows b{font-weight:900;font-size:1.05rem;letter-spacing:-.02em;white-space:nowrap;}
+.rows small{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;opacity:.6;margin-top:.2rem;}
+.lst .btn{margin-top:auto;text-align:center;}
+.lst .nota{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;opacity:.6;margin:.9rem 0 0;text-align:center;}
+
+/* ============================================================
    FOOTER
    ============================================================ */
 .foot{background:var(--bordeaux);color:rgba(255,246,232,.65);padding:clamp(3rem,6vw,4.5rem) 0 2.5rem;}
@@ -220,7 +244,7 @@ em.corsivo{font-family:var(--serif);font-style:italic;font-weight:600;letter-spa
 .reveal.in{opacity:1;transform:none;}
 
 @media (max-width:900px){
-  .gift-grid,.about-grid,.guide-grid{grid-template-columns:1fr;}
+  .gift-grid,.about-grid,.guide-grid,.listino-grid{grid-template-columns:1fr;}
   .hero-inner{max-width:none;}
   .cards{grid-template-columns:1fr;}
   .about h2,.gift h2,.guide h2{max-width:none;}
@@ -290,7 +314,7 @@ em.corsivo{font-family:var(--serif);font-style:italic;font-weight:600;letter-spa
     <div class="gift-grid">
       <div class="reveal">
         <ul class="steps">
-          <li><b>01</b><span>Lasci nome ed email qui accanto e prendi il posto.</span></li>
+          <li><b>01</b><span>Lasci la tua email qui accanto e prendi il posto.</span></li>
           <li><b>02</b><span>Ti rispondo con l'indirizzo a cui mandare gli scatti: da 3 a 5, non di più.</span></li>
           <li><b>03</b><span>Li edito e li impagino: colore, luce, ritocco naturale, copy sulle slide.</span></li>
           <li><b>04</b><span>Ti rimando il carosello pronto da pubblicare, in alta risoluzione.</span></li>
@@ -314,17 +338,26 @@ em.corsivo{font-family:var(--serif);font-style:italic;font-weight:600;letter-spa
 
         <div class="form-body">
           <!-- Collega action/method al tuo provider email (Brevo, Mailchimp, MailerLite) -->
-          <form id="leadForm" novalidate>
+          <!-- Collegato a Brevo (lista "Posti carosello 1M") -->
+          <form id="leadForm" method="POST" target="brevo_sink" action="https://c0fa8ca6.sibforms.com/serve/MUIFAN7PEAV5wcrqewNpXKd0b9A7_C4gThQ4L598ETFiv9jC84ksTKYEW7nrh0sIyh3P9fOyYqU2zht2ytJRMuPFGa3X8OsXo4rCQLWfVJ1TBoM4tiRnC_vgazMjbcPXzXMKrmlg_kIR8D0T7cCFdrBf6M9HdrU6uB9nghkOPW8r4TZF4oY1RuBOJ79LvmQyGFCfFuRZJAEPKOsznw==" novalidate>
             <div class="field">
-              <label for="nome">Il tuo nome</label>
-              <input type="text" id="nome" name="nome" placeholder="Chiara" required autocomplete="given-name">
+              <label for="EMAIL">La tua email migliore</label>
+              <input type="email" id="EMAIL" name="EMAIL" placeholder="tu@email.it" required autocomplete="email">
             </div>
-            <div class="field">
-              <label for="email">La tua email migliore</label>
-              <input type="email" id="email" name="email" placeholder="tu@email.it" required autocomplete="email">
-            </div>
+
+            <label class="consent" for="privacy">
+              <input type="checkbox" id="privacy" required>
+              <span>Ho letto l'<a href="#privacy-policy">informativa privacy</a> e acconsento al trattamento dei miei dati.</span>
+            </label>
+
+            <!-- campi tecnici Brevo: non toccare -->
+            <input type="text" name="email_address_check" value="" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="locale" value="it">
+            <input type="hidden" name="html_type" value="simple">
+
             <button type="submit" class="btn">Prendi il posto 🎁</button>
           </form>
+          <iframe name="brevo_sink" title="invio modulo" style="display:none" aria-hidden="true"></iframe>
           <p class="deadline">Chiude il 31 · poi si torna a listino</p>
         </div>
 
@@ -359,7 +392,7 @@ em.corsivo{font-family:var(--serif);font-style:italic;font-weight:600;letter-spa
           <span class="now">17€</span>
           <span class="was">27€</span>
         </div>
-        <a class="btn btn--dark" href="#">Comprala ora</a>
+        <a class="btn btn--dark" href="https://buy.stripe.com/4gM5kwe7t8PS3oM2Ws7bW0d" target="_blank" rel="noopener">Comprala ora — 17€</a>
         <p class="guide-note">PDF · download immediato · prezzo 1M fino al 31</p>
       </div>
     </div>
@@ -407,7 +440,7 @@ em.corsivo{font-family:var(--serif);font-style:italic;font-weight:600;letter-spa
           <li>Pubblicazione programmata</li>
         </ul>
         <div class="price">400€<small>il primo mese</small></div>
-        <a class="btn btn--outline" href="https://calendly.com/lasmmsenzafiltri/call-gratuita" target="_blank" rel="noopener">Prenota la call</a>
+        <a class="btn btn--outline" href="https://calendly.com/chiaraawebdesigner/call-report-fine-mese" target="_blank" rel="noopener">Prenota la call</a>
       </article>
 
       <article class="svc svc--pick reveal">
@@ -422,7 +455,7 @@ em.corsivo{font-family:var(--serif);font-style:italic;font-weight:600;letter-spa
           <li>Report mensile dei numeri</li>
         </ul>
         <div class="price">da 600€<small>al mese</small></div>
-        <a class="btn btn--dark" href="https://calendly.com/lasmmsenzafiltri/call-gratuita" target="_blank" rel="noopener">Prenota la call</a>
+        <a class="btn btn--dark" href="https://calendly.com/chiaraawebdesigner/call-report-fine-mese" target="_blank" rel="noopener">Prenota la call</a>
       </article>
 
       <article class="svc reveal">
@@ -437,11 +470,52 @@ em.corsivo{font-family:var(--serif);font-style:italic;font-weight:600;letter-spa
           <li>Consulenza continua</li>
         </ul>
         <div class="price">su misura<small>preventivo dedicato</small></div>
-        <a class="btn btn--outline" href="https://calendly.com/lasmmsenzafiltri/call-gratuita" target="_blank" rel="noopener">Prenota la call</a>
+        <a class="btn btn--outline" href="https://calendly.com/chiaraawebdesigner/call-report-fine-mese" target="_blank" rel="noopener">Prenota la call</a>
       </article>
     </div>
 
-    <p class="extra">Ti serve solo un <b>audit del profilo</b>, dei <b>caroselli</b> o del <b>photo editing</b>? <a href="#contatti">Scrivimi</a>, si fanno anche singoli.</p>
+    <p class="extra">Preferisci scrivere? Per preventivi e richieste su misura: <a href="mailto:chiaraawebdesigner@gmail.com?subject=Richiesta%20preventivo">chiaraawebdesigner@gmail.com</a></p>
+  </div>
+</section>
+
+<!-- ========== LISTINO SERVIZI SINGOLI ==========
+     ⚠️ PREZZI SEGNAPOSTO — sostituiscili con i tuoi.
+     Quando crei i link di pagamento su Stripe, mettili negli href dei bottoni. -->
+<section class="listino" id="listino">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">Listino</p>
+      <h2>Se non ti serve la gestione, ti serve solo il pezzo</h2>
+      <p class="listino-lead">Niente abbonamento, niente impegno mensile. Mi mandi il materiale, te lo restituisco pronto.</p>
+    </div>
+
+    <div class="listino-grid">
+      <article class="lst reveal">
+        <div class="tag">Contenuti</div>
+        <h3>Caroselli</h3>
+        <p>Copy e grafica nei tuoi colori, file modificabile incluso. Resta tuo.</p>
+        <ul class="rows">
+          <li><span>1 carosello<small>fino a 8 slide</small></span> <b>45€</b></li>
+          <li><span>4 caroselli<small>un mese di contenuti</small></span> <b>160€</b></li>
+          <li><span>8 caroselli<small>il più conveniente</small></span> <b>290€</b></li>
+        </ul>
+        <a class="btn btn--outline" href="mailto:chiaraawebdesigner@gmail.com?subject=Caroselli">Scrivimi per i caroselli</a>
+        <p class="nota">consegna 5 giorni lavorativi</p>
+      </article>
+
+      <article class="lst reveal">
+        <div class="tag">Post-produzione</div>
+        <h3>Photo editing</h3>
+        <p>Color grading coerente col tuo feed e ritocco naturale. Niente plastica.</p>
+        <ul class="rows">
+          <li><span>1 foto<small>prova generale</small></span> <b>12€</b></li>
+          <li><span>10 foto<small>uno shooting intero</small></span> <b>90€</b></li>
+          <li><span>25 foto<small>il più conveniente</small></span> <b>200€</b></li>
+        </ul>
+        <a class="btn btn--outline" href="mailto:chiaraawebdesigner@gmail.com?subject=Photo editing">Mandami le foto</a>
+        <p class="nota">consegna 48 ore</p>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -453,7 +527,8 @@ em.corsivo{font-family:var(--serif);font-style:italic;font-weight:600;letter-spa
       <nav class="foot-links">
         <a href="https://instagram.com/lasmmsenzafiltri">Instagram</a>
         <a href="https://tiktok.com/@lasmmsenzafiltri">TikTok</a>
-        <a href="mailto:ciao@chiarasmm.it">Scrivimi</a>
+        <a href="mailto:chiaraawebdesigner@gmail.com">Scrivimi</a>
+        <a href="#listino">Listino</a>
         <a href="#regalo">7 posti carosello</a>
       </nav>
     </div>
@@ -482,13 +557,12 @@ em.corsivo{font-family:var(--serif);font-style:italic;font-weight:600;letter-spa
 
 // ---- Form: conferma inline. Collega qui il tuo provider email.
 document.getElementById('leadForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  var nome = document.getElementById('nome');
-  var email = document.getElementById('email');
-  if(!nome.value.trim()){ nome.focus(); return; }
-  if(!email.checkValidity()){ email.focus(); return; }
-  // fetch('URL_DEL_TUO_FORM', {method:'POST', body:new FormData(this)})
-  document.getElementById('optin').classList.add('is-done');
+  var email   = document.getElementById('EMAIL');
+  var privacy = document.getElementById('privacy');
+  if(!email.checkValidity()){ e.preventDefault(); email.focus(); return; }
+  if(!privacy.checked){ e.preventDefault(); privacy.focus(); return; }
+  // il modulo parte davvero verso Brevo (nell'iframe nascosto): mostriamo la conferma
+  setTimeout(function(){ document.getElementById('optin').classList.add('is-done'); }, 400);
 });
 
 // ---- Reveal allo scroll
